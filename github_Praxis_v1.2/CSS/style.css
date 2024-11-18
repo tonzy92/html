@@ -598,3 +598,28 @@ button:active {
         display: flex; /* Zeigt das Dropdown-Menü an */
     }
 }
+
+/* ====================================================== */
+/* Footer: Responsive Anpassungen */
+/* ====================================================== */
+@media (max-width: 768px) {
+    .grid_container_footer {
+        grid-template-columns: 1fr; /* Einspaltiges Layout für kleine Bildschirme */
+        gap: 20px; /* Abstand zwischen den Elementen */
+        text-align: center; /* Inhalte zentrieren */
+    }
+
+    .grid_footer_item {
+        margin: 1em auto; /* Zentrierte Positionierung */
+        text-align: center; /* Inhalte zentrieren */
+    }
+
+    .grid_footer_item a {
+        font-size: 14px; /* Kleinere Schrift für Mobilgeräte */
+    }
+
+    .footer_button button {
+        width: 4em; /* Größerer Button für bessere Bedienbarkeit */
+        height: 4em;
+    }
+}
