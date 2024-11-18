@@ -623,3 +623,105 @@ button:active {
         height: 4em;
     }
 }
+
+/* ====================================================== */
+/* Media Queries für sehr kleine Geräte (< 425px) */
+/* ====================================================== */
+@media (max-width: 425px) {
+    /* Hauptbutton (menu-toggle) */
+    .menu-toggle {
+        width: 80px; /* Etwas schmaler */
+        height: 40px; /* Reduzierte Höhe */
+        font-size: 1em; /* Kleinere Schriftgröße */
+    }
+
+    /* Dropdown-Menü */
+    .dropdown-menu {
+        align-items: center;
+        flex-direction: column; /* Elemente untereinander anordnen */
+        gap: 8px; /* Weniger Abstand zwischen den Buttons */
+    }
+
+    .dropdown-menu a {
+        width: 90%; /* Breitere Buttons für kleine Bildschirme */
+        font-size: 14px; /* Reduzierte Schriftgröße */
+    }
+
+    /* Navigation */
+    .grid_container_nav {
+        display: none; /* Desktop-Navigation weiterhin versteckt */
+    }
+
+    /* Footer */
+    .grid_container_footer {
+        grid-template-columns: 1fr; /* Einspaltiges Layout */
+        gap: 15px; /* Geringerer Abstand */
+        text-align: center; /* Zentrierung */
+    }
+
+    .grid_footer_item {
+        margin: 1em auto; /* Zentrierte Elemente */
+        font-size: 14px; /* Kleinere Schrift für bessere Lesbarkeit */
+    }
+
+    .grid_footer_item a {
+        font-size: 12px; /* Noch kleinere Schriftgröße */
+    }
+
+    .footer_button button {
+        width: 3em; /* Kleinere Buttons */
+        height: 3em;
+        font-size: large; /* Schriftgröße angepasst */
+    }
+
+    /* Überschriften und Text */
+    h1, h2 {
+        font-size: 1.4em; /* Kleinere Schriftgrößen */
+        margin-left: 0.5em; /* Weniger Abstand links */
+    }
+
+    .main_welcome {
+        font-size: medium; /* Schriftgröße reduziert */
+        line-height: 1.4; /* Engerer Zeilenabstand */
+        margin: 1em; /* Weniger Außenabstand */
+    }
+
+    /* Bilder */
+    img {
+        width: 100%; /* Bilder passen sich der Bildschirmbreite an */
+        height: auto; /* Seitenverhältnis bleibt erhalten */
+    }
+
+    .grid_team_item img {
+        width: 80%; /* Schmalere Bilder auf Team-Seite */
+        margin: 0 auto; /* Zentrierte Bilder */
+    }
+
+    /* Buttons allgemein */
+    button {
+        padding: 8px 16px; /* Weniger Innenabstand */
+        font-size: 12px; /* Kleinere Schriftgröße */
+    }
+
+    /* Formular */
+    .contact-container {
+        grid-template-columns: 1fr; /* Einspaltiges Layout */
+        gap: 15px; /* Reduzierter Abstand */
+    }
+
+    .contact-form .form-group {
+        padding: 5px; /* Kleinere Abstände */
+    }
+
+    .contact-form .form-group input,
+    .contact-form .form-group textarea {
+        font-size: 12px; /* Reduzierte Schriftgröße */
+        padding: 8px; /* Weniger Innenabstand */
+    }
+
+    /* Footer Buttons */
+    .footer_button button {
+        width: 2.5em; /* Noch kleinere Größe */
+        height: 2.5em;
+    }
+}
