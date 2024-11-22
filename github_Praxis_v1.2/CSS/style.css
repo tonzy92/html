@@ -154,39 +154,7 @@ nav {
     width: 4em;
     height: 4em;
 }
-/* ====================================================== */
-/* Grid für die Team-Seite */
-/* ====================================================== */
-.grid_container_team {
-    display: grid;
-    grid-gap: 20px;
-    margin: 0;
-    margin-top: 7em;
-    padding: 0;
-}
-.grid_team_item {
-    display: flex;
-    text-align: left;
-    gap: 20px;
-}
-.grid_team_item h4, div {
-    margin: 0;
-    margin-left: 0.75em;
-    margin-top: 1em;
-}
-.grid_team_item ul {
-    margin: 0;
-    margin-top: 1em;
-}
-.grid_team_item li {
-    margin: 1em;
-}
-.grid_team_item img {
-    height: 300px;
-    width: 250px;
-    margin: 1em;
-    object-fit: cover; /* Verhindert Verzerrungen bei Bildern */
-}
+
 /* ################################################################*/
 /* 3. Hauptteil
 /* ################################################################*/
@@ -228,6 +196,83 @@ h2 {
     margin-left: 1.5em;
 }
 /* ====================================================== */
+/* Grid für die Team-Seite */
+/* ====================================================== */
+/* Allgemeines Layout für alle Geräte */
+.grid_team_item {
+    display: flex;
+    flex-direction: column; /* Elemente vertikal anordnen */
+    align-items: center; /* Zentrierung horizontal */
+    text-align: center;
+    gap: 0.5em; /* Abstand zwischen Bild und Text */
+    border: 1px solid #ccc; /* Rahmen um das Item */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15); /* Schatteneffekt */
+    border-radius: 10px; /* Runde Ecken */
+    padding: 1.5em; /* Innenabstand */
+    margin: 1.5em; /* Außenabstand */
+    background-color: #f9f9f9; /* Heller Hintergrund */
+}
+
+.grid_team_item img {
+    height: 15em;
+    width: 10em;
+    object-fit: cover; /* Kein Verzerren des Bildes */
+    margin: 0;
+}
+
+.grid_team_item h4 {
+    margin-bottom: 0.5em; /* Abstand zum unteren Text */
+    padding-bottom: 0.5em; /* Innenabstand zur Trennlinie */
+    border-bottom: 1px solid #ccc; /* Trennlinie */
+    width: 100%; /* Linie über die gesamte Breite */
+    text-align: center;
+    font-size: 1.2em; /* Größere Schrift für Überschrift */
+    color: #444; /* Dezente Schriftfarbe */
+}
+
+.grid_team_item div {
+    margin: 0.5em 0; /* Einheitlicher Abstand oben und unten */
+    font-size: 0.9em; /* Kleinere Schriftgröße für Details */
+    color: #666; /* Etwas hellere Farbe für Details */
+    text-align: center;
+}
+
+.grid_container_team {
+    display: grid;
+    grid-gap: 1.5em; /* Abstand zwischen den Grid-Items */
+    margin: 2em; /* Abstand zum Seitenrand */
+    padding: 0;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsives Layout */
+}
+
+
+/* Anpassungen für Geräte ab 768px */
+@media (min-width: 768px) {
+    .grid_container_team {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Größere Items */
+        grid-gap: 2em; /* Mehr Abstand zwischen den Items */
+    }
+
+    .grid_team_item {
+        padding: 2em; /* Mehr Innenabstand */
+        margin: 2em; /* Größerer Außenabstand */
+    }
+
+    .grid_team_item img {
+        height: 20em; /* Größeres Bild */
+        width: 12em;
+    }
+
+    .grid_team_item h4 {
+        font-size: 1.5em; /* Größere Schriftgröße für Überschrift */
+    }
+
+    .grid_team_item div {
+        font-size: 1em; /* Etwas größere Schrift für Details */
+    }
+}
+
+/* ====================================================== */
 /* Konfiguration der Behandlungsseite */
 /* ====================================================== */
 .background_container_treatment {
@@ -265,6 +310,60 @@ h2 {
     padding-left: 2rem;
     padding-top: 3em;
     padding-bottom: 2em;
+}
+
+/* Anpassungen für Geräte ab 768px */
+@media (max-width: 768px) {
+    .background_container_treatment {
+        height: 400px; /* Kleinere Höhe */
+    }
+
+    .treatment_container {
+        flex-direction: column; /* Vertikale Anordnung */
+        padding: 1rem;
+    }
+
+    .treatment_container p {
+        padding-left: 1.5rem; /* Weniger Seitenabstand */
+        padding-right: 1.5rem;
+        padding-bottom: 3rem; /* Weniger Abstand unten */
+        font-size: medium; /* Kleinere Schrift */
+        line-height: 28px;
+    }
+
+    #h2_treatment {
+        padding-left: 1.5rem;
+        padding-top: 2rem;
+        padding-bottom: 1.5rem;
+        font-size: 1.5rem; /* Angepasste Schriftgröße */
+    }
+}
+
+/* Anpassungen für Geräte bis 425px */
+@media (max-width: 425px) {
+    .background_container_treatment {
+        height: auto; /* Automatische Höhe, um Inhalt zu umschließen */
+    }
+
+    .treatment_container {
+        flex-direction: column; /* Vertikale Anordnung */
+        padding: 1rem;
+    }
+
+    .treatment_container p {
+        padding-left: 1rem; /* Weniger Seitenabstand */
+        padding-right: 1rem;
+        padding-bottom: 2rem; /* Weniger Abstand unten */
+        font-size: small; /* Kleinere Schrift */
+        line-height: 25px;
+    }
+
+    #h2_treatment {
+        padding-left: 1rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+        font-size: 1.2rem; /* Noch kleinere Schriftgröße */
+    }
 }
 /* ====================================================== */
 /* Konfiguration der Termine */
@@ -305,7 +404,9 @@ h2 {
 /* ====================================================== */
 /* Konfiguration Kontaktformular*/
 /* ====================================================== */
-
+.background_container_appointment {
+    height: auto; /* Automatische Höhe, um Inhalt zu umschließen */
+}
 
 .contact-container {
     display: grid;
@@ -400,6 +501,89 @@ button:active {
     background-color: rgba(156, 212, 203, 0.8); /* Etwas dunkler beim Anklicken */
 }
 
+/* Anpassungen für Geräte ab 768px */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr; /* Nur eine Spalte */
+        gap: 30px;
+        padding: 0;
+        margin: 2.5em;
+    }
+
+    .contact-info {
+        font-size: 14px; /* Kleinere Schriftgröße */
+    }
+
+    .contact-info h2 {
+        font-size: 20px; /* Kleinere Überschrift */
+        margin-bottom: 15px;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr; /* Alle Felder in eine Spalte */
+
+    }
+
+    button {
+        font-size: 2em; /* Kleinere Schriftgröße für den Button */
+    }
+}
+
+/* Anpassungen für Geräte ab 425px */
+@media (max-width: 425px) {
+    .contact-container {
+        grid-template-columns: 1fr; /* Bleibt eine Spalte */
+        gap: 10px;
+        margin: 1em;
+    }
+
+    .contact-info {
+        font-size: 12px; /* Noch kleinere Schriftgröße */
+    }
+
+    .contact-info h2 {
+        font-size: 18px; /* Noch kleinere Überschrift */
+        margin-bottom: 10px;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr; /* Alle Felder weiterhin in eine Spalte */
+        gap: 10px;
+    }
+
+    button {
+        font-size: 2em; /* Kleinste Schriftgröße für den Button */
+        padding: 8px 15px;
+    }
+}
+
+/* Anpassungen für Geräte ab 425px */
+@media (max-width: 375px) {
+    .contact-container {
+        grid-template-columns: 1fr; /* Bleibt eine Spalte */
+        gap: 8px;
+        margin: 0.75em;
+    }
+
+    .contact-info {
+        font-size: 12px; /* Noch kleinere Schriftgröße */
+    }
+
+    .contact-info h2 {
+        font-size: 18px; /* Noch kleinere Überschrift */
+        margin-bottom: 10px;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr; /* Alle Felder weiterhin in eine Spalte */
+        gap: 10px;
+    }
+
+    button {
+        font-size: 2em; /* Kleinste Schriftgröße für den Button */
+        padding: 8px 15px;
+    }
+}
 
 /* ====================================================== */
 /* Konfiguration der Anfahrt */
@@ -449,6 +633,62 @@ button:active {
 .route_map iframe { 
     box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1);
     margin: 2em;
+}
+
+/* Anpassungen für Geräte ab 768px */
+@media (max-width: 768px) {
+    .background_container_route {
+        height: 400px; /* Kleinere Höhe */
+    }
+
+    #h2_route {
+        margin-left: 1em; /* Weniger Seitenabstand */
+        margin-top: 2em; /* Geringere Abstände */
+        font-size: 1.5em; /* Kleinere Schriftgröße */
+    }
+
+    .route_container {
+        margin-left: 1em; /* Reduzierter Außenabstand */
+        margin-bottom: 3em; /* Kleinere Abstände */
+        font-size: medium; /* Reduzierte Schriftgröße */
+    }
+
+    .route_container li {
+        margin-left: 1em; /* Geringerer Einzug */
+    }
+
+    .route_map iframe {
+        margin: 1.5em; /* Weniger Außenabstand */
+        width: 90%; /* Verkleinerte Breite für bessere Darstellung */
+    }
+}
+
+/* Anpassungen für Geräte bis 425px */
+@media (max-width: 425px) {
+    .background_container_route {
+        height: auto; /* Automatische Höhe */
+    }
+
+    #h2_route {
+        margin-left: 0.5em; /* Minimaler Außenabstand */
+        margin-top: 1.5em; /* Weniger Abstand nach oben */
+        font-size: 1.2em; /* Noch kleinere Schriftgröße */
+    }
+
+    .route_container {
+        margin-left: 0.5em; /* Minimaler Außenabstand */
+        margin-bottom: 2em; /* Kompaktere Abstände */
+        font-size: small; /* Noch kleinere Schriftgröße */
+    }
+
+    .route_container li {
+        margin-left: 0.5em; /* Minimaler Einzug */
+    }
+
+    .route_map iframe {
+        margin: 1em; /* Kompakterer Außenabstand */
+        width: 100%; /* Maximale Breite für mobile Geräte */
+    }
 }
 /* ################################################################*/
 /* 4. Fußbereich
@@ -516,8 +756,6 @@ button:active {
 }
 
 
-
-
 /* ######################################################## */
 /* Media Queries für Mobilgeräte */
 /* ######################################################## */
@@ -551,7 +789,7 @@ button:active {
     flex-direction: row; /* Elemente nebeneinander anordnen */
     position: relative;
     justify-content: center;
-    gap: 10px; /* Abstand zwischen den Buttons */
+    gap: 30px; /* Abstand zwischen den Buttons */
     margin: 1em auto;
 }
 
@@ -559,7 +797,7 @@ button:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px; /* Rechteckige Form mit Breite */
+    width: 120px; /* Rechteckige Form mit Breite */
     height: 50px; /* Rechteckige Form mit Höhe */
     border-radius: 10px; /* Abgerundete Ecken */
     background-color: #f9f9f9;
@@ -584,7 +822,10 @@ button:active {
     pointer-events: auto;
 }
 
-/* Für Geräte unter 768px */
+
+/* ====================================================== */
+/* Für Geräte ab 768px */
+/* ====================================================== */
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
@@ -597,12 +838,6 @@ button:active {
     .dropdown-menu {
         display: flex; /* Zeigt das Dropdown-Menü an */
     }
-}
-
-/* ====================================================== */
-/* Footer: Responsive Anpassungen */
-/* ====================================================== */
-@media (max-width: 768px) {
     .grid_container_footer {
         grid-template-columns: 1fr; /* Einspaltiges Layout für kleine Bildschirme */
         gap: 20px; /* Abstand zwischen den Elementen */
@@ -612,6 +847,7 @@ button:active {
     .grid_footer_item {
         margin: 1em auto; /* Zentrierte Positionierung */
         text-align: center; /* Inhalte zentrieren */
+        justify-items: center;
     }
 
     .grid_footer_item a {
@@ -619,11 +855,11 @@ button:active {
     }
 
     .footer_button button {
-        width: 4em; /* Größerer Button für bessere Bedienbarkeit */
-        height: 4em;
+        width: 10em; /* Größerer Button für bessere Bedienbarkeit */
+        height: 2em;
     }
+   
 }
-
 /* ====================================================== */
 /* Media Queries für sehr kleine Geräte (< 425px) */
 /* ====================================================== */
@@ -662,6 +898,7 @@ button:active {
     .grid_footer_item {
         margin: 1em auto; /* Zentrierte Elemente */
         font-size: 14px; /* Kleinere Schrift für bessere Lesbarkeit */
+        justify-items: center;
     }
 
     .grid_footer_item a {
@@ -721,7 +958,21 @@ button:active {
 
     /* Footer Buttons */
     .footer_button button {
-        width: 2.5em; /* Noch kleinere Größe */
+        width: 8em; /* Noch kleinere Größe */
         height: 2.5em;
+    }
+    .grid_team_item div {
+        margin: 0.5em 0; /* Einheitlicher Abstand oben und unten */
+        font-size: 0.9em; /* Kleinere Schriftgröße für Details */
+        color: #666; /* Etwas hellere Farbe für Details */
+        text-align: center;
+    }
+    
+    .grid_container_team {
+        display: grid;
+        grid-gap: 1.5em; /* Abstand zwischen den Grid-Items */
+        margin: 2em; /* Abstand zum Seitenrand */
+        padding: 0;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsives Layout */
     }
 }

@@ -23,7 +23,7 @@ window.onload = function() {
         currentLocation = "/Marcella/HTML/index.html"; // Falls index.html aufgerufen wird, passe es an
     }
 
-    // Alle Links innerhalb der Navigation
+    // Alle Links innerhalb der NaviSgation
     const navLinks = document.querySelectorAll('.grid_nav_item a, .dropdown-content a');
 
     // Für jeden Link in der Navigation prüfen, ob der Pfad übereinstimmt
@@ -38,14 +38,7 @@ window.onload = function() {
             link.style.color = "black"; // Andere Links bleiben schwarz
         }
     });
-
-    // Button "Termine" einfärben, wenn einer der beiden Unterseiten aufgerufen ist
-    const termineButton = document.querySelector('.dropbtn'); // Selektiere den "Termine"-Button
-    if (currentLocation.endsWith("/Marcella/HTML/appointment_formular.html") || 
-        currentLocation.endsWith("/Marcella/HTML/contact.html")) {
-        termineButton.style.color = "rgb(156, 212, 203)"; // Button "Termine" einfärben
-    }
-};
+}; 
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".contact-form").addEventListener("submit", function (e) {
