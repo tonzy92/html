@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=yes">
     <title>Meine Praxis</title>
     <link href="../CSS/style.css" type="text/css" rel="stylesheet">
     <script src="../JS/scripts.js" defer></script>
@@ -17,7 +18,7 @@
                         <img id="logo_shadow" src="../IMAGES/logo.png" alt="logo">
                     </div>
                     <div class="grid_nav_item"><a href="index.html">Willkommen</a></div>
-                    <div class="grid_nav_item"><a href="team.html">Das Team</a></div>
+                    <div class="grid_nav_item"><a href="team.html">Team</a></div>
                     <div class="grid_nav_item"><a href="treatment.html">Behandlung</a></div>
                     <div class="grid_nav_item"><a href="cost.html">Kosten</a></div>
                     <div class="grid_nav_item"><a href="contact.html">Kontakt</a></div>
@@ -30,7 +31,6 @@
         <!-- Mobiler Button -->
       <div class="mini_banner">
                 <button class="menuButton" id="menuButton" onclick ="toggleNav()">☰</button>
-
                 <div class="logo_side_container">
                     <img id="logo_shadow_side" src="../IMAGES/logo.png" alt="logo">
                 </div>
@@ -50,6 +50,26 @@
 
     <main>
         <!-- Hauptinhalt -->
+      <!-- Font Awesome CSS einbinden -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+        <div class="main_button_container">
+            <button class="main_button_info">
+                <i class="fas fa-phone"></i> <!-- Stilisiertes Telefonsymbol -->
+            </button>
+
+            <div class="info_field">
+                <h3>Telefonische Sprechzeiten</h3>
+                <p>Montags: 08:00 - 12:00</p>
+                <p>Mittwochs: 08:00 - 12:00</p>
+                <p>Donnerstags: 08:00 - 12:00</p>
+                <p>Freitags: 08:00 - 12:00</p>
+                <h3>Unsere Praxis</h3>
+                <p>Reinbeker Weg 21<br>21029 Hamburg</p>
+                <p>Tel: <a href="tel:04060856493">040 60 85 64 93</a></p>
+            </div>
+        </div>
+
         <div class="background_container">
             <img class="main_background" id="background_blur" src="../IMAGES/background1.webp" alt="Hintergrundbild">
         </div>
@@ -58,13 +78,12 @@
         <h2>Ich freue mich, Sie auf meiner Homepage begrüßen zu dürfen</h2>
         
         <p class="main_welcome">
-            Mein Name ist Marcella Beljo, und ich habe mich als Psychotherapeutin auf die Behandlung von Suchterkrankungen spezialisiert. <br> In meiner Praxis biete ich Ihnen einen geschützten Raum, in dem wir gemeinsam an Ihren individuellen Herausforderungen arbeiten können – sei es auf dem Weg zur Heilung oder zur persönlichen Weiterentwicklung. <br><br>
-            Ich bin überzeugt, dass jeder Mensch die Kraft in sich trägt, Veränderungen zu bewirken. Mit Empathie, fachlicher Kompetenz und langjähriger Erfahrung begleite ich Sie auf Ihrem Weg aus der Abhängigkeit hin zu einem freien und erfüllten Leben.<br><br>
+            <br>
             Ich lade Sie herzlich ein, sich auf meiner Seite über mein Angebot zu informieren und freue mich darauf, Sie persönlich kennenzulernen.
         </p>
         
         <p id="main_sign">
-            Ihre Marcella Beljo <br><br>
+            Ihre Marcella Beljo <br> 
             (Psychotherapeutin, spezialisiert auf Suchterkrankungen)
         </p>
     </main>
@@ -81,34 +100,24 @@
         </div>
 
         <div class="grid_container_footer">
-           
             <div class="grid_footer_item">
-                <h4>Meine Praxis</h4>
-                <br>
                 <table>
-                    <tr><td>Am Bahnhof 1</td></tr>
-                    <tr><td>18437 Stralsund</td></tr>
-                    <tr><td>Tel. 0172/5199208</td></tr>
+                    <tr>
+                        <td colspan="3" style="text-align: center;"> <!-- Links in einer Zeile -->
+                            <a href="../HTML/impressum.html">Impressum</a> &nbsp;|
+                            <a href="../HTML/impressum.html">Datenschutz</a> &nbsp;|
+                            <a href="../HTML/impressum.html">Cookie-Richtlinie</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: center;"> <!-- Text unter den Links -->
+                            <br>
+                            <p>© 2025 Praxis Beljo. Alle Rechte vorbehalten.</p>
+                        </td>
+                    </tr>
                 </table>
-            </div>
-            
-            <div class="grid_footer_item">
-                <h4>Telefonische Sprechzeiten</h4>
-                <table>
-                    <br>
-                    <tr><td>Montags</td><td>07:30 - 16:30</td></tr>
-                    <tr><td>Mittwochs</td><td>07:30 - 16:30</td></tr>
-                    <tr><td>Donnerstags&nbsp;&nbsp;&nbsp;&nbsp;</td><td>08:30 - 16:30</td></tr>
-                    <tr><td>Freitags</td><td>08:30 - 12:00</td></tr>
-                </table>           
-            </div>
-
-            <div class="grid_footer_item">
-                <h4>Relevante Informationen</h4>
-                <table>
-                    <br>
-                    <tr><td><a href="../HTML/impressum.html">Impressum</a></td></tr>
-                </table>
+                
+              
             </div>
         </div>
     </footer>

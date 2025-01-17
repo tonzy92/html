@@ -26,6 +26,8 @@ window.onscroll = function () {
 };
 
 
+
+
 document.querySelector(".arrow-wrap").addEventListener("click", function (event) {
     event.preventDefault(); // Standard-Link-Verhalten verhindern
 
