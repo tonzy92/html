@@ -289,7 +289,7 @@ nav {
 }
 
 /* Show menu button at smaller widths */
-@media (max-width: 1280px) {
+@media (max-width: 1156px) {
     #menuButton {
         display: flex;
     }
@@ -430,13 +430,13 @@ h1 {
 h2 {
     margin: 1.5rem auto; /* Zentriert den Text und lässt die obere/untere Margin gleich */
     max-width: 1170px; /* Begrenzung der maximalen Breite */
-    color: rgba(95, 95, 95, 0.302);
+    color: rgba(95, 95, 95, 0.46);
     line-height: 1.875rem; /* Bessere Lesbarkeit (entspricht ca. 30px) */
 }
 #main_sign {
 
     margin: 1.5rem auto; /* Zentriert den Text und lässt die obere/untere Margin gleich */    
-    color: rgba(95, 95, 95, 0.302);
+    color: rgba(95, 95, 95, 0.46);
     max-width: 1165px; /* Begrenzung der maximalen Breite */
     line-height: 1.875rem; /* Bessere Lesbarkeit (entspricht ca. 30px) */
     margin-bottom: 5rem;
@@ -445,8 +445,8 @@ h2 {
     font-weight: bold;
 }
 
-/* Anpassungen für 1280px */
-@media (max-width: 1280px) {
+/* Anpassungen für 1200px */
+@media (max-width: 1156px) {
    
 
 }
@@ -769,8 +769,9 @@ h2 {
 .contact-form .form-group label {
     margin-bottom: 5px;
     font-size: 14px;
-    color: #333;
+    color: #494949;
 }
+
 
 .contact-form .form-group input,
 .contact-form .form-group select,
@@ -852,7 +853,7 @@ h2 {
     display: grid;
     margin: 0 auto;
     margin-bottom: 2rem;
-    padding: 0; /* Reduziertes Padding für mehr Kontrolle */
+    padding: 2rem; /* Reduziertes Padding für mehr Kontrolle */
     max-width: 1165px; /* Begrenzung der maximalen Breite */
     font-size: large;
     gap: 1rem; /* Abstand zwischen Grid-Elementen */
@@ -876,24 +877,27 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center; /* Zentriert den Inhalt vertikal */
-    margin: 0 auto;
-    padding: 0;
-    padding-top: 1rem;
-    width: 1165px;
+    margin: 2rem auto;
+    padding: 2rem;
+    width: 100%;
+    height: 500px;
     border-top: 2px solid black;
-
 }
-
 
 .route_map iframe {
     display: block; /* Vermeidet unerwartetes Verhalten durch Grid */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.524);
-    margin: 2rem auto 3rem; /* Zentriert das iFrame */
-    height: 500px; /* Passt die Höhe dynamisch an */
+    padding: 0;
+    margin: 0;
+    height: 100%; /* Passt die Höhe dynamisch an */
     width: 100%;
     max-width: 1165px; /* Begrenzung der maximalen Breite */
 }
 
+
+.h3_route {
+    color: rgba(95, 95, 95, 0.46);
+}
 
 /* ################################################################*/
 /* 4. Fußbereich
@@ -946,7 +950,7 @@ h2 {
     filter:drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.179));
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1156px) {
  
 }
 
@@ -1040,7 +1044,7 @@ h2 {
     transform: rotate(180deg);
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1156px) {
     .footer_button {
         display: none;
     } 

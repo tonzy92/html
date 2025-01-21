@@ -79,7 +79,7 @@
             <div class="contact-info">
                 <h2>KONTAKT</h2>
                 <p>Reinbeker Weg 21 <br>21029 Hamburg</p>
-                <p>040 60 85 64 93 </p>
+                <p>040 60 85 64 93</p>
             </div>
         
             <!-- Rechte Formularseite -->
@@ -100,9 +100,24 @@
             
                 <div class="form-group">
                     <label for="phone">Telefon *</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+49 151 23456789" required>
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <select id="country-code" name="country-code" style="width: 120px;">
+                            <option value="49" selected>🇩🇪 +49</option>
+                            <option value="41">🇨🇭 +41 </option>
+                            <option value="43">🇦🇹 +43 </option>
+                            <option value="44">🇬🇧 +44 </option>
+                            <option value="33">🇫🇷 +33 </option>
+                            <option value="34">🇪🇸 +34 </option>
+                            <option value="39">🇮🇹 +39 </option>
+                            <option value="31">🇳🇱 +31 </option>
+                            <option value="32">🇧🇪 +32 </option>
+                            <option value="46">🇸🇪 +46 </option>
+                        </select>
+                        <input type="tel" id="phone" name="phone" placeholder="012 345 6789" required>
+                    </div>
                 </div>
-            
+                
+         
                 <div class="form-group">
                     <label for="insurance-name">Name Ihrer Versicherung *</label>
                     <input type="text" id="insurance-name" name="insurance-name" required>
@@ -110,7 +125,7 @@
             
                 <div class="form-group full-width">
                     <label for="address">Anschrift *</label>
-                    <input type="text" id="address" name="address" placeholder="Addresse & Nr." required>
+                    <input type="text" id="address" name="address" placeholder="Adresse Zeile 1" required>
                 </div>
             
                 <div class="form-group half-width">
