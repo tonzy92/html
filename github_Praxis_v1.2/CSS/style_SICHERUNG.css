@@ -37,6 +37,12 @@ html, body {
 h1 , h2 , h3 , h4 , h5 , h6 , p , ul , ol , blockquote {
     margin-top: 0;
 }
+
+a[href^="tel"] {
+    text-decoration: none !important;
+    color: inherit !important;
+    font-size: 1.2rem !important;
+  }
 /* ################################################################*/
 /* 1. Kopfbereich
 /* ################################################################*/
@@ -262,7 +268,7 @@ nav {
 
 .sidenav a:hover {
     color: #050505ec;
-    background-color: #98723989;
+    background-color: #987239a0;
     transition: all 0.9s;
 }
 
@@ -271,7 +277,7 @@ nav {
     padding: 0;
     margin: 0;
     margin-top: 10px;
-    margin-right: 99vh;
+    margin-right: 90vh;
     filter:drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
     width: 180px;
     height: 80px;
@@ -333,13 +339,79 @@ nav {
     width: 100%;
     height: 100%;
 }
+
+.main_button_container {
+    display: flex;
+    position: absolute;
+    margin: 2rem 1rem 1rem 1rem;
+    padding: 0rem;
+    width: 50px;
+    height: 50px;
+    z-index: 3;
+}
+
+.main_button_info {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff84;
+    font-size: 1.5rem;
+    border: none;
+    opacity: 1;
+    transition: opacity 0.3s ease; /* Übergang hinzugefügt */
+}
+
+.info_field {
+    position: absolute;
+    margin: 0;
+    padding: 0 1.5rem; /* Für Innenabstand */
+    width: 250px;
+    height: 0; /* Ausgangshöhe */
+    background-color: rgba(255, 255, 255, 0.766);
+    border: none;
+    opacity: 1;
+    z-index: 4;
+    overflow: hidden; /* Verhindert, dass der Inhalt außerhalb sichtbar wird */
+    transition: height 0.5s ease; /* Animiert die Höhe */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Schatteneffekt */
+}
+
+.info_field h3 {
+    margin-top: 0;
+    padding-top: 0.5rem;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.info_field p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Button im Hintergrund ausblenden */
+.main_button_container:hover .main_button_info {
+    opacity: 0; /* Unsichtbar machen */
+    pointer-events: none; /* Klicks deaktivieren */
+}
+
+/* Infofeld anzeigen */
+.main_button_container:hover .info_field {
+    height: 280px; /* Zielhöhe */
+    opacity: 1; /* Sicherstellen, dass es sichtbar bleibt */
+}
+
+
+
+
 .main_background {
     position:relative;
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
     background-repeat: no-repeat; /* Verhindert Wiederholung des Bildes */
     background-size: cover; /* Skaliert das Bild proportional, um den gesamten Bereich zu füllen */
     background-position: center; /* Zentriert das Bild im Container */
@@ -370,7 +442,7 @@ h1 {
 }
 h2 {
     margin: 1.5rem auto; /* Zentriert den Text und lässt die obere/untere Margin gleich */
-    max-width: 1165px; /* Begrenzung der maximalen Breite */
+    max-width: 1170px; /* Begrenzung der maximalen Breite */
     color: rgba(95, 95, 95, 0.302);
     line-height: 1.875rem; /* Bessere Lesbarkeit (entspricht ca. 30px) */
 }
@@ -439,169 +511,186 @@ h2 {
     }
 }
 
-/* Anpassungen für 768px */
-@media (max-width: 768px) {
-    #main_sign {
-        font-size: medium;
-        margin: 1.5rem;
-        margin-bottom: 2em;
-    }
 
-    .main_welcome {
-        margin: 1.5rem;
-        font-size: medium;
-        line-height: 28px;
-    }
-
-    h1 {
-        margin: 1.5rem;
-        margin-top : 1rem;
-        margin-bottom: 0.1rem;
-        padding: 0;
-        font-size: larger;
-    }
-
-    h2 {
-        margin: 1.5rem auto; /* Zentriert den Text und lässt die obere/untere Margin gleich */
-        max-width: 1165px; /* Begrenzung der maximalen Breite */
-        color: rgba(95, 95, 95, 0.302);
-        line-height: 1.875rem; /* Bessere Lesbarkeit (entspricht ca. 30px) */
-    }
-}
-
-/* Anpassungen für 425px */
-@media (max-width: 425px) {
-    .main_background {
-       display: none;
-    }
-
-    #main_sign {
-        font-size: small;
-        margin: 1rem;
-        margin-bottom: 4rem;
-    }
-
-    .main_welcome {
-        margin: 1rem;
-        font-size: small;
-        line-height: 25px;
-    }
-
-    h1 {
-        margin-top: 1.5rem;
-        margin-left: 0.8rem;
-        font-size: 1.3rem;
-    }
-
-    h2 {
-        margin-left: 0.8rem;
-        font-size: 1rem;
-    }
-}
-
-/* Anpassungen für 375px */
-@media (max-width: 375px) {
-    .main_background {
-        height: 200px;
-    }
-
-    #main_sign {
-        font-size: small;
-        margin: 0.8rem;
-        margin-bottom: 3rem;
-    }
-
-    .main_welcome {
-        margin: 0.8em;
-        font-size: smaller;
-        line-height: 22px;
-    }
-
-    h1 {
-        margin-top: 1rem;
-        margin: 0.8rem;
-    }
-
-    h2 {
-        margin: 0.8rem;
-    }
-}
 
 /* ====================================================== */
 /* Grid für die Team-Seite */
 /* ====================================================== */
 /* Allgemeines Layout für alle Geräte */
-.grid_team_item {
+
+.grid_container_team {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr); /* 2 Spalten */
+    grid-template-rows: auto auto; /* Höhe passt sich an den Inhalt an */
+    grid-gap: 1.5em;
+    margin: 0 auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    padding: 1.5em;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    height: auto; /* Gesamtcontainer passt sich der Höhe an */
+    width: 80%;
+    max-width: 1200px;
+    background-color: #98723935;
+}
+
+.grid_team_item{
+    position: relative; /* Referenz für absolute Positionierung der Kinder */
     display: flex;
     flex-direction: column; /* Elemente vertikal anordnen */
     align-items: center; /* Zentrierung horizontal */
     text-align: center;
+    justify-self: center;
+    height: auto; /* Gleiche Höhe wie das Bild */
+    width: 100%; /* Gleiche Breite wie das Bild */
+    max-width: 400px;
+    max-height: 500px;;
     gap: 0.5em; /* Abstand zwischen Bild und Text */
-    border: 1px solid #ccc; /* Rahmen um das Item */
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15); /* Schatteneffekt */
-    border-radius: 10px; /* Runde Ecken */
-    padding: 1.5em; /* Innenabstand */
-    margin: 1.5em; /* Außenabstand */
-    background-color: #f9f9f9; /* Heller Hintergrund */
-}
-
-.grid_team_item img {
-    height: 15em;
-    width: 10em;
-    object-fit: cover; /* Kein Verzerren des Bildes */
-    margin: 0;
+    padding: 0; /* Innenabstand */
+    margin: 0; /* Außenabstand */
+    overflow: hidden; /* Verhindert, dass Inhalte außerhalb des Containers sichtbar werden */
+    z-index: 5;
+    background-color: #67676700;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.218);
 }
 
 .grid_team_item h4 {
-    margin-bottom: 0.5em; /* Abstand zum unteren Text */
-    padding-bottom: 0.5em; /* Innenabstand zur Trennlinie */
-    border-bottom: 1px solid #ccc; /* Trennlinie */
-    width: 100%; /* Linie über die gesamte Breite */
+    margin-left: 0.5em;
+    margin-bottom: 0.2em;
+    border-bottom: 1px solid #a09f9fd2; /* Trennlinie */
+    width: 95%; /* Linie über die gesamte Breite */
     text-align: center;
     font-size: 1.2em; /* Größere Schrift für Überschrift */
-    color: #444; /* Dezente Schriftfarbe */
+    color: #eae9e9ea; /* Dezente Schriftfarbe */
 }
 
-.grid_team_item div {
-    margin: 0.5em 0; /* Einheitlicher Abstand oben und unten */
-    font-size: 0.9em; /* Kleinere Schriftgröße für Details */
-    color: #666; /* Etwas hellere Farbe für Details */
+.grid_container_team h2 {
+    text-align: center;
+    justify-self: center;
+    margin-left: 4em;
+    margin-bottom: 0.2em;
+    border-bottom: 1px solid #a09f9fd2; /* Trennlinie */
+    width: 70%; /* Linie über die gesamte Breite */
+    font-size: 1.2em; /* Größere Schrift für Überschrift */
+    color: #000000ea; /* Dezente Schriftfarbe */
+}
+
+.grid_container_team p {
+    margin-top: 1em;
+    color: rgb(0, 0, 0);
+}
+
+
+ /* ITEM 1 im Grid für Bild und Text */
+.grid_team_item.item1{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.grid_team_text1 {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
     text-align: center;
 }
 
-.grid_container_team {
-    display: grid;
-    grid-gap: 1.5em; /* Abstand zwischen den Grid-Items */
-    margin: 2em; /* Abstand zum Seitenrand */
-    padding: 0;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsives Layout */
+ /* ITEM 2 im Grid für Bild und Text */
+.grid_team_item.item2{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.grid_team_text2 {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+    text-align: center;
 }
 
 
-/* Anpassungen für Geräte ab 768px */
-@media (min-width: 768px) {
-    .grid_container_team {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Größere Items */
-        grid-gap: 2em; /* Mehr Abstand zwischen den Items */
-    }
+ /* ITEM 3 im Grid für Bild und Text */
+.grid_team_item.item3{
+    grid-column: 1;
+    grid-row: 3;
+}
 
-    .grid_team_item {
-        padding: 2em; /* Mehr Innenabstand */
-        margin: 2em; /* Größerer Außenabstand */
-    }
+.grid_team_text3 {
+    grid-column: 2;
+    grid-row: 3;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+    text-align: center;
+}
 
-    .grid_team_item img {
-        height: 20em; /* Größeres Bild */
-        width: 12em;
-    }
 
-    .grid_team_item h4 {
-        font-size: 1.5em; /* Größere Schriftgröße für Überschrift */
-    }
+ /* ITEM 4 im Grid für Bild und Text */
+.grid_team_item.item4{
+    grid-column: 2;
+    grid-row: 4;
+}
 
-    .grid_team_item div {
-        font-size: 1em; /* Etwas größere Schrift für Details */
-    }
+.grid_team_text4 {
+    grid-column: 1;
+    grid-row: 4;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+    text-align: center;
+}
+
+
+.grid_team_item img {
+    height: 500px;
+    width: 400px;
+    object-fit: cover; /* Kein Verzerren des Bildes */
+    margin: 0;     
+}
+
+
+.grid_team_item div {
+    margin: 0; /* Einheitlicher Abstand oben und unten */
+    font-size: 0.9em; /* Kleinere Schriftgröße für Details */
+    color: #dededee3; /* Etwas hellere Farbe für Details */
+    text-align: center;
+}
+
+.team_info_container {
+    position: absolute; /* Absolut positioniert im Container */
+    display: flex; /* Flexbox für Inhalte */
+    text-align: center;
+    justify-content: center; /* Inhalte zentrieren */
+    padding: 0;
+    margin: 0;
+    top: 0; /* Beginn des Infofelds oben */
+    left: 0; /* Beginn des Infofelds links */
+    width: 100%; /* Vollständige Breite des Containers */
+    height: 0; /* Vollständige Höhe des Containers */
+    background-color: #00000062; /* Hintergrundfarbe mit Transparenz */
+    opacity: 1; /* Unsichtbar bei Standardzustand */
+    overflow: hidden;
+    z-index: 10; /* Höher als das Bild */
+    align-items: center; /* Inhalte horizontal zentrieren */
+    transition: all 0.9s ease; /* Übergang für die Sichtbarkeit */
+}
+
+.team_info_container ul {
+    margin-bottom: -17em;
+}
+
+.team_info_container li {
+    margin-bottom: 1em;
+    list-style-type:none;
+}
+
+.grid_team_item:hover .team_info_container {
+    height: 100%;
+    opacity: 1;
 }
 
 /* ====================================================== */
@@ -624,10 +713,22 @@ h2 {
     width: 100%;
     height: 100%;
 }
+
+#h2_treatment {
+    margin: 1.5rem auto; /* Zentriert den Text und lässt die obere/untere Margin gleich */
+    margin-top: 5rem;
+    max-width: 1200px; /* Begrenzung der maximalen Breite */
+    padding: 0 1rem; /* Fügt Innenabstand für kleine Bildschirme hinzu */
+    font-size: large;
+    text-align: justify;
+    line-height: 1.875rem; /* Bessere Lesbarkeit (entspricht ca. 30px) */
+}
+
 .treatment_container{
     display: flex;
     padding: 0;
     margin: 0;
+    margin-bottom: 5rem;
     padding: 0;
     width: 100%;
 }
@@ -639,160 +740,29 @@ h2 {
     text-align: justify;
     line-height: 1.875rem; /* Bessere Lesbarkeit (entspricht ca. 30px) */
 }
-#h2_treatment {
-    margin: 1.5rem auto; /* Zentriert den Text und lässt die obere/untere Margin gleich */
-    max-width: 1200px; /* Begrenzung der maximalen Breite */
-    padding: 0 1rem; /* Fügt Innenabstand für kleine Bildschirme hinzu */
-    font-size: large;
-    text-align: justify;
-    line-height: 1.875rem; /* Bessere Lesbarkeit (entspricht ca. 30px) */
-}
-/* Anpassungen für Geräte ab 1050px */
-@media (max-width: 1050px) {
-    .background_container_treatment {
-        height: 350px; /* Kleinere Höhe */
-    }
-
-    .treatment_container {
-        flex-direction: column; /* Vertikale Anordnung */
-        margin: 0;
-        margin-bottom: 2rem;
-        padding: 1rem;
-        }
-
-    #h2_treatment {
-        margin: 0;
-        margin-top: 1rem;
-        margin-bottom: 0.7rem;
-        padding: 1rem;
-        font-size: 1.7rem; /* Angepasste Schriftgröße */
-    }
-    .treatment_container p {
-        margin: 0;
-        padding: 0;
-        font-size: 1.2rem; /* Kleinere Schrift */
-        line-height: 2rem;
-    }
-}
-/* Anpassungen für Geräte ab 768px */
-@media (max-width: 768px) {
-    .background_container_treatment {
-        display: none;
-    }
-
-    .treatment_container {
-        flex-direction: column; /* Vertikale Anordnung */
-        margin: 0;
-        margin-bottom: 2rem;
-        padding: 1rem;
-        }
-
-    #h2_treatment {
-        margin: 0;
-        margin-top: 1rem;
-        margin-bottom: 0.7rem;
-        padding: 1rem;
-        font-size: 1.7rem; /* Angepasste Schriftgröße */
-    }
-    .treatment_container p {
-        margin: 0;
-        padding: 0;
-        font-size: 1.2rem; /* Kleinere Schrift */
-        line-height: 2rem;
-    }
-}
-
-/* Anpassungen für Geräte bis 425px */
-@media (max-width: 425px) {
-    .background_container_treatment {
-        display: none;
-    }
-
-    .treatment_container {
-        flex-direction: column; /* Vertikale Anordnung */
-        margin: 0;
-        margin-bottom: 2rem;
-        padding: 1rem;
-        }
-
-    #h2_treatment {
-        margin: 0;
-        margin-top: 1rem;
-        margin-bottom: 0.7rem;
-        padding: 1rem;
-        font-size: 1.2rem; /* Angepasste Schriftgröße */
-    }
-    .treatment_container p {
-        margin: 0;
-        padding: 0;
-        font-size: 0.8rem; /* Kleinere Schrift */
-        line-height: 1.2rem;
-    }
-}
-
-/* Anpassungen für Geräte bis px */
-@media (max-width: 375px) {
-    .background_container_treatment {
-        display: none;
-    }
-
-    .treatment_container {
-        flex-direction: column; /* Vertikale Anordnung */
-        margin: 0;
-        margin-bottom: 2rem;
-        padding: 1rem;
-        }
-
-    #h2_treatment {
-        margin: 0;
-        margin-top: 1rem;
-        margin-bottom: 0.7rem;
-        padding: 1rem;
-        font-size: 1.2rem; /* Angepasste Schriftgröße */
-    }
-    .treatment_container p {
-        margin: 0;
-        padding: 0;
-        font-size: 0.8rem; /* Kleinere Schrift */
-        line-height: 1.2rem;
-    }
-}
 /* ====================================================== */
-/* Konfiguration der Termine */
+/* Konfiguration Kostenseite*/
 /* ====================================================== */
-.background_container_appointment {
+
+
+
+
+.cost_container {
+    position: relative;
     display: flex;
     margin: 0;
+    margin-top: 15em;
+    margin-bottom: 15em;
     padding: 0;
+    height: 100%;
     width: 100%;
-    height: 500px;
-}
-.main_background_appointment {
-    margin: 0;
-    padding: 0;
-    height: 400px;
-    width: 100%;
+    justify-content: space-around;
 }
 
-.appointment_container {
-    display: flex;
-    align-items: start;
-    justify-content: start;
-    margin-top: 2em;
-    padding: 0;
-    margin: 20px;
-    width: 100%;
-    height: 800px;
-}
 
-#calendar {
-    display: flex;
-    max-width: 800px;
-    margin: 0;
-    padding: 0;
-    width: 700px;
 
-}
+
+
 /* ====================================================== */
 /* Konfiguration Kontaktformular*/
 /* ====================================================== */
@@ -800,15 +770,33 @@ h2 {
     height: auto; /* Automatische Höhe, um Inhalt zu umschließen */
 }
 
+.background_container_contact {
+    margin: 0;
+    padding: 0;
+    height: 50%;
+    width: 100%;
+}
+
+.background_container_contact img{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+
 .contact-container {
     display: grid;
     margin: 0 auto;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
     grid-template-columns: 1fr 2fr; /* Zwei Spalten */
-    gap: 1rem;
-    width: 90%;
-    max-width: 1200px;
+    gap: 15rem;
+    width: 100%;
+    max-width: 1165px;
     background: white;
-    padding: 3rem;
+    padding: 0;
 }
 
 /* Kontaktinformationen (linke Spalte) */
@@ -875,9 +863,9 @@ h2 {
 .sent_button {
     grid-column: span 2; /* Über beide Spalten */
     padding: 10px 20px;
-    background-color: #ffffff;
+    background-color: #98723986;
     border: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
@@ -885,155 +873,13 @@ h2 {
 }
 
 .sent_button:hover {
-    background-color: #ffffff;
+    background-color: #987239c3;
 }
 
 /* Animation beim Anklicken */
 .sent_button:active {
     transform: scale(0.95); /* Verkleinert den Button leicht */
-    background-color: rgba(255, 255, 255, 0.8); /* Etwas dunkler beim Anklicken */
-}
-/* Anpassungen für Geräte ab 1050px */
-@media (max-width: 1050px) {
-
-    .main_background_appointment {
-        margin: 0;
-        padding: 0;
-        height: 300px;
-        width: 100%;
-    }
-    .contact-container {
-        grid-template-columns: 1fr; /* Nur eine Spalte */
-        gap: 30px;
-        padding: 0;
-        margin: 2.5em;
-    }
-
-    .contact-info {
-        font-size: 14px; /* Kleinere Schriftgröße */
-    }
-
-    .contact-info h2 {
-        font-size: 20px; /* Kleinere Überschrift */
-        margin-bottom: 15px;
-    }
-
-    .contact-form {
-        grid-template-columns: 1fr; /* Alle Felder in eine Spalte */
-
-    }
-
-    sent_button {
-        font-size: 2em; /* Kleinere Schriftgröße für den Button */
-    }
-}
-
-/* Anpassungen für Geräte ab 768px */
-
-@media (max-width: 768px) {
-
-    .main_background_appointment {
-       display: none;
-    }
-
-    .contact-container {
-        grid-template-columns: 1fr; /* Nur eine Spalte */
-        gap: 30px;
-        padding: 1rem;
-        margin: 2.5rem;
-        border: 2px solid #ccc; /* Rahmenfarbe und Dicke */
-        border-radius: 8px; /* Abgerundete Ecken (optional) */
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Schatteneffekt */
-    }
-
-    .contact-info {
-        font-size: 14px; /* Kleinere Schriftgröße */
-    }
-
-    .contact-info h2 {
-        font-size: 20px; /* Kleinere Überschrift */
-        margin-bottom: 15px;
-    }
-
-    .contact-form {
-        grid-template-columns: 1fr; /* Alle Felder in eine Spalte */
-
-    }
-
-    sent_button {
-        font-size: 2em; /* Kleinere Schriftgröße für den Button */
-    }
-}
-
-/* Anpassungen für Geräte ab 425px */
-@media (max-width: 425px) {
-    .main_background_appointment {
-        display: none;
-     }
- 
-     .contact-container {
-         grid-template-columns: 1fr; /* Nur eine Spalte */
-         gap: 30px;
-         padding: 1rem;
-         margin: 1.5rem;
-         border: 2px solid #ccc; /* Rahmenfarbe und Dicke */
-         border-radius: 8px; /* Abgerundete Ecken (optional) */
-         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Schatteneffekt */
-     }
- 
-     .contact-info {
-         font-size: 12px; /* Kleinere Schriftgröße */
-     }
- 
-     .contact-info h2 {
-         font-size: 20px; /* Kleinere Überschrift */
-         margin-bottom: 15px;
-     }
- 
-     .contact-form {
-         grid-template-columns: 1fr; /* Alle Felder in eine Spalte */
- 
-     }
- 
-     sent_button {
-         font-size: 1.5em; /* Kleinere Schriftgröße für den Button */
-     }
-}
-
-/* Anpassungen für Geräte ab 425px */
-@media (max-width: 375px) {
-
-    .main_background_appointment {
-        display: none;
-     }
- 
-     .contact-container {
-         grid-template-columns: 1fr; /* Nur eine Spalte */
-         gap: 30px;
-         padding: 1rem;
-         margin: 1.5rem;
-         border: 2px solid #ccc; /* Rahmenfarbe und Dicke */
-         border-radius: 8px; /* Abgerundete Ecken (optional) */
-         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Schatteneffekt */
-     }
- 
-     .contact-info {
-         font-size: 12px; /* Kleinere Schriftgröße */
-     }
- 
-     .contact-info h2 {
-         font-size: 20px; /* Kleinere Überschrift */
-         margin-bottom: 15px;
-     }
- 
-     .contact-form {
-         grid-template-columns: 1fr; /* Alle Felder in eine Spalte */
- 
-     }
- 
-     sent_button {
-         font-size: 1.5em; /* Kleinere Schriftgröße für den Button */
-     }
+    background-color: #987239e1; /* Etwas dunkler beim Anklicken */
 }
 
 /* ====================================================== */
@@ -1045,13 +891,14 @@ h2 {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 500px;
+    height: 100%;
 }
 
 .main_background_route {
     margin: 0;
     padding: 0;
     width: 100%;
+    height: 100%;
 }
 
 .route_wrapper {
@@ -1066,6 +913,7 @@ h2 {
 .route_container {
     display: grid;
     margin: 0 auto;
+    margin-bottom: 2rem;
     padding: 0; /* Reduziertes Padding für mehr Kontrolle */
     max-width: 1165px; /* Begrenzung der maximalen Breite */
     font-size: large;
@@ -1077,14 +925,6 @@ h2 {
     margin: 0 0 15px 2em; /* Einheitliche Margins */
 }
 
-.route_map {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Zentriert den Inhalt vertikal */
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
 
 .h2_route {
     margin: 1.5rem 0; /* Obere und untere Abstände */
@@ -1093,6 +933,19 @@ h2 {
     line-height: 1.875rem; /* Zeilenhöhe für Lesbarkeit */
     text-align: left; /* Text nach links ausrichten */
 }
+
+.route_map {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Zentriert den Inhalt vertikal */
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 1rem;
+    width: 1165px;
+    border-top: 2px solid black;
+
+}
+
 
 .route_map iframe {
     display: block; /* Vermeidet unerwartetes Verhalten durch Grid */
@@ -1103,111 +956,6 @@ h2 {
     max-width: 1165px; /* Begrenzung der maximalen Breite */
 }
 
-/* Anpassungen für Geräte ab 1050px */
-@media (max-width: 1050px) {
-
-    .route_wrapper {
-        display: grid;
-        grid-template-columns: 1fr; /* Zwei gleich große Spalten */
-        gap: 1rem; /* Abstand zwischen den Spalten */
-        width: 100%; /* Volle Breite des Containers */
-    }
-
-    .background_container_route {
-        height: 300px; /* Kleinere Höhe */
-    }
-
-    #h2_route {
-        margin: 1.5rem; /* Weniger Seitenabstand */
-        margin-top: 2rem; /* Geringere Abstände */
-        font-size: 1.5rem; /* Kleinere Schriftgröße */
-    }
-
-
-    .route_container {
-        margin: 1.5rem; /* Reduzierter Außenabstand */
-        margin-bottom: 3em; /* Kleinere Abstände */
-        font-size: medium; /* Reduzierte Schriftgröße */
-    }
-
-    .route_container li {
-        margin: 1.5rem; /* Geringerer Einzug */
-    }
-
-    .route_map {
-        margin: 0; /* Geringerer Einzug */
-        padding: 1rem;
-    }
-
-    .route_map iframe {
-        margin: 1rem; /* Weniger Außenabstand */
-        width: 90%; /* Verkleinerte Breite für bessere Darstellung */
-    }
-}
-/* Anpassungen für Geräte ab 768px */
-@media (max-width: 768px) {
-    .background_container_route {
-        display: none;
-    }
-
-    #h2_route {
-        margin: 1.5rem; /* Weniger Seitenabstand */
-        margin-top: 2rem; /* Geringere Abstände */
-        font-size: 1.5rem; /* Kleinere Schriftgröße */
-    }
-
-    .route_container {
-        margin: 1.5rem; /* Reduzierter Außenabstand */
-        margin-bottom: 3em; /* Kleinere Abstände */
-        font-size: medium; /* Reduzierte Schriftgröße */
-    }
-
-    .route_container li {
-        margin: 1.5rem; /* Geringerer Einzug */
-    }
-
-    .route_map {
-        margin: 0; /* Geringerer Einzug */
-        padding: 1rem;
-    }
-
-    .route_map iframe {
-        margin: 1rem; /* Weniger Außenabstand */
-        width: 90%; /* Verkleinerte Breite für bessere Darstellung */
-    }   
-}
-/* Anpassungen für Geräte bis 425px */
-@media (max-width: 425px) {
-    .background_container_route {
-        display: none;
-    }
-
-    #h2_route {
-        margin: 1.5rem; /* Weniger Seitenabstand */
-        margin-top: 2rem; /* Geringere Abstände */
-        font-size: 1.2rem; /* Kleinere Schriftgröße */
-    }
-
-    .route_container {
-        margin: 1.5rem; /* Reduzierter Außenabstand */
-        margin-bottom: 3em; /* Kleinere Abstände */
-        font-size: smaller; /* Reduzierte Schriftgröße */
-    }
-
-    .route_container li {
-        margin: 1.5rem; /* Geringerer Einzug */
-    }
-
-    .route_map {
-        margin: 0; /* Geringerer Einzug */
-        padding: 0.8rem;
-    }
-
-    .route_map iframe {
-        margin: 0; /* Weniger Außenabstand */
-        width: 90%; /* Verkleinerte Breite für bessere Darstellung */
-    }  
-}
 
 /* ################################################################*/
 /* 4. Fußbereich
@@ -1215,154 +963,63 @@ h2 {
 
 .site-footer {
     display: flex;
-    margin: 0;
+    margin: 0 auto; /* zentriert die gesamte Fußzeile */
     padding: 0;
+    height: 120px;
     width: 100%;
 }
 
 .grid_container_footer {
     display: grid;
-    grid-template-columns: 400px 400px 400px ; /* Feste Spaltenbreiten */
-    gap: 20px;
-    margin: 0;
+    justify-items: center; /* horizontale Zentrierung */
+    align-items: center; /* vertikale Zentrierung */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* responsive Spalten */
+    margin: 0 auto; /* gleichmäßige Reduktion von links und rechts */
     padding: 0;
-    width: 100%; 
-    justify-items: center;
-    align-items: start;
+    width: 100%;
     background-color: #98723984;
-    justify-content: center;
 }
 
 .grid_footer_item {
-    display: block;
+    display: flex;
     padding: 0;
-    margin: 2em;
-    text-align: left;
+    margin: 0;
     font-size: large;
-    color: black;
 }
+
 .grid_footer_item a {
-    color: black;
+    color: rgba(0, 0, 0, 0.678);
     text-decoration: none;
+    margin: 0 0.1em;
+    transition: all 0.3s ease;
 }
+
+
+.grid_footer_item p {
+    color: rgba(0, 0, 0, 0.678);
+    text-decoration: none; 
+}
+
 .grid_footer_item a:hover {
-    text-decoration: underline;
+    color: rgb(0, 0, 0);
+    filter:drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.179));
 }
 
-.grid_footer_item:nth-child(1) {
-    justify-self: start;
-    border-right: 1px solid #000000a2;
-    margin-top: 15px;
-    padding: 30px;
-    padding-top: 25px;
-    margin-bottom: 20px;
-    padding-right: 130px;
-}
-.grid_footer_item:nth-child(3) {
-    justify-self: End;
-    border-left: 1px solid #000000a2;
-    margin-top: 15px;
-    margin-bottom: 20px;
-    padding: 50px;
-    padding-top: 30px;
-    padding-left: 160px;
-}
 
-@media (max-width: 1280px) {
-    .grid_container_footer {
-        text-align: center; /* Inhalte zentrieren */
-        width: 1280px;
-    }
 
-    .grid_footer_item {
-        margin: 1em auto; /* Zentrierte Positionierung */
-        text-align: center; /* Inhalte zentrieren */
-        justify-items: center;
-    }
-
-    .grid_footer_item a {
-        font-size: 14px; /* Kleinere Schrift für Mobilgeräte */
-    }
-
-    .footer_button button {
-        width: 8em; /* Moderat verkleinert, aber noch gut bedienbar */
-        height: 2.5em; /* Leicht erhöht für bessere Bedienbarkeit */
-        font-size: 1rem; /* Lesbare Schriftgröße */
-    }
-}   
-
+/* Optional: Anpassungen für kleinere Bildschirme */
 @media (max-width: 768px) {
     .grid_container_footer {
-        grid-template-columns: 1fr; /* Einspaltiges Layout für kleine Bildschirme */
-        gap: 20px; /* Abstand zwischen den Elementen */
-        text-align: center; /* Inhalte zentrieren */
+        grid-template-columns: 1fr; /* Einzelspalte bei kleinen Viewports */
     }
 
     .grid_footer_item {
-        margin: 1em auto; /* Zentrierte Positionierung */
-        text-align: center; /* Inhalte zentrieren */
-        justify-items: center;
+        margin: 1rem auto; /* Zentrierte Inhalte */
+        font-size: medium; /* Kleinere Schriftgröße */
     }
+}
 
-    .grid_footer_item a {
-        font-size: 14px; /* Kleinere Schrift für Mobilgeräte */
-    }
-
-    .footer_button button {
-        width: 7em; /* Noch etwas kleiner */
-        height: 2.2em; /* Etwas kompakter */
-        font-size: 0.9rem; /* Schrift bleibt lesbar */
-    }
-}   
-
-@media (max-width: 425px) {
-    .grid_container_footer {
-        grid-template-columns: 1fr; /* Einspaltiges Layout */
-        gap: 15px; /* Geringerer Abstand */
-        text-align: center; /* Zentrierung */
-    }
-
-    .grid_footer_item {
-        margin: 1em auto; /* Zentrierte Elemente */
-        font-size: 14px; /* Kleinere Schrift für bessere Lesbarkeit */
-        justify-items: center;
-    }
-
-    .grid_footer_item a {
-        font-size: 12px; /* Noch kleinere Schriftgröße */
-    }
-
-    .footer_button button {
-        width: 6em; /* Angepasste Größe für Smartphones */
-        height: 2em; /* Komfortable Bedienung mit dem Daumen */
-        font-size: 0.85rem; /* Geringfügig kleinere Schrift */
-    }
-} 
-
-@media (max-width: 375px) {
-    .grid_container_footer {
-        grid-template-columns: 1fr; /* Einspaltiges Layout */
-        gap: 15px; /* Geringerer Abstand */
-        text-align: center; /* Zentrierung */
-    }
-
-    .grid_footer_item {
-        margin: 1em auto; /* Zentrierte Elemente */
-        font-size: 14px; /* Kleinere Schrift für bessere Lesbarkeit */
-        justify-items: center;
-    }
-
-    .grid_footer_item a {
-        font-size: 12px; /* Noch kleinere Schriftgröße */
-    }
-
-    .footer_button button {
-        width: 5em; /* Kompakte Größe für sehr kleine Bildschirme */
-        height: 1.8em; /* Immer noch bedienbar */
-        font-size: 0.8rem; /* Optimiert für kleine Displays */
-    }
-}   
-
+ 
 
 
 /* ====================================================== */
@@ -1373,7 +1030,7 @@ h2 {
 .footer_button {
     position: fixed; /* Positioniert den Button an einer festen Stelle */
     right: 20px; /* Abstand vom rechten Rand */
-    bottom: 230px; /* Abstand vom unteren Rand */
+    bottom: 140px; /* Abstand vom unteren Rand */
     background-color: rgba(152, 114, 57, 0.445); /* Hintergrundfarbe */
     box-shadow: 0px 2px 4px rgba(153, 107, 37, 0.571); /* Schatten */
     width: 60px; /* Breite des Buttons */
@@ -1447,7 +1104,7 @@ h2 {
 
 /* Zustand mit neuer Position */
 .footer_button.rotate_button {
-    bottom: 92vh; /* Verschiebt den Button um 500px */
+    bottom: 90vh; /* Verschiebt den Button um 500px */
     transition: bottom 0.5s ease-in-out; /* Animation für die neue Position */
     transform: rotate(180deg);
 }
@@ -1478,31 +1135,34 @@ h2 {
 .content-container {
     max-width: 800px;
     margin: 2em auto;
+    margin-top: 7em;
     padding: 1em 2em;
-    background: #fff;
+    background: #ffffff8b;
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.551);
 }
 
 /* Überschriften */
 .section-title, .subsection-title {
-    color: rgba(156, 212, 203, 0.626);
+    color: #98723998;
     margin: 0;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
-
+    
 .section-title {
-    border-bottom: 2px solid rgba(156, 212, 203, 0.626);
+    border-bottom: 2px solid #98723983;
 }
 
 /* Links */
 .link {
-    color: rgba(140, 218, 205, 0.831);
+    color: #9872398e;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .link:hover {
+    color: #987239df;
     text-decoration: underline;
 }
 
@@ -1517,105 +1177,9 @@ h2 {
 
 /* Hervorhebung (Box für rechtliche Hinweise oder Downloads) */
 .highlight-box {
-    background: #f3f4f6;
+    background: #0000000b;
     padding: 0.5em;
-    border-left: 4px solid rgba(156, 212, 203, 0.626);
+    border-left: 4px solid #9872397c;
     margin: 1em 0;
 }
 
-/* RESPONSIVE DESIGN */
-
-/* Geräte bis 1050px */
-
-
-@media (max-width: 1050px) {
-
-    .impressum_background {
-        margin: 0;
-        padding: 0;
-        height: 300px;
-        width: 100%;
-        background-repeat: no-repeat; /* Verhindert Wiederholung des Bildes */
-        background-size: cover; /* Skaliert das Bild proportional, um den gesamten Bereich zu füllen */
-        background-position: center; /* Zentriert das Bild im Container */
-    }
-
-    .content-container {
-        max-width: 700px; /* Reduzierte maximale Breite */
-        padding: 1em; /* Weniger Polsterung */
-    }
-
-    .section-title, .subsection-title {
-        font-size: 1.8rem; /* Leicht kleinere Schriftgröße */
-    }
-
-    .highlight-box {
-        padding: 0.8em; /* Mehr Polsterung für kleine Geräte */
-    }
-}
-
-/* Geräte bis 768px (Tablets) */
-@media (max-width: 768px) {
-    .impressum_background {
-        display: none;
-    }
-    .content-container {
-        max-width: 600px; /* Engeres Layout */
-        padding: 0.8em; /* Weniger Polsterung */
-    }
-
-    .section-title, .subsection-title {
-        font-size: 1.5rem; /* Noch kleinere Schriftgröße */
-    }
-
-    .highlight-box {
-        padding: 0.6em;
-        border-left-width: 3px; /* Dünnerer Rahmen */
-    }
-}
-
-/* Geräte bis 425px (Smartphones im Hochformat) */
-@media (max-width: 425px) {
-    .impressum_background {
-        display: none;
-    }
-    .content-container {
-        max-width: 100%; /* Breite vollständig ausnutzen */
-        padding: 0.5em; /* Reduzierte Polsterung */
-        margin: 1em; /* Weniger Außenabstand */
-    }
-
-    .section-title, .subsection-title {
-        font-size: 1.2rem; /* Noch kleinere Schriftgröße */
-    }
-
-    .highlight-box {
-        padding: 0.4em; /* Weniger Polsterung */
-        border-left-width: 2px; /* Dünnerer Rahmen */
-    }
-
-    .data-list {
-        padding-left: 1em; /* Reduzierter Listenabstand */
-    }
-}
-
-/* Geräte bis 375px (kleinere Smartphones) */
-@media (max-width: 375px) {
-    .content-container {
-        padding: 0.4em; /* Minimalste Polsterung */
-        margin: 0.5em; /* Weniger Außenabstand */
-    }
-
-    .section-title, .subsection-title {
-        font-size: 1rem; /* Kleine Schriftgröße */
-    }
-
-    .highlight-box {
-        padding: 0.3em;
-        border-left-width: 2px; /* Dünnerer Rahmen */
-    }
-
-    .data-list {
-        padding-left: 0.8em; /* Noch schmalerer Abstand */
-    }
-}

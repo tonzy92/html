@@ -210,7 +210,7 @@ nav {
     margin: 0;
     padding: 0;
     height: 100px;
-    width: 1280px;
+    width: 100%;
     background-color:#98723984;
     z-index: 1;
     box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2); /* Schatten */
@@ -225,7 +225,6 @@ nav {
     width: 100px;
     height: 100px;
     cursor: pointer; /* Ändert den Cursor in den Zeigefinger */
-
     border: solid 1px rgba(255, 255, 255, 0);
     font-size: 3rem;
     color: #ffffff;
@@ -275,13 +274,12 @@ nav {
 .logo_side_container {
     display: none;
     padding: 0;
-    margin: 0;
-    margin-top: 10px;
-    margin-right: 90vh;
+    margin-top: 1em;
+    margin-left: 50px;
     filter:drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
-    width: 180px;
+    width: 100%;
     height: 80px;
-    justify-self: start;
+ 
     z-index: 1;     
 }
 
@@ -310,20 +308,8 @@ nav {
 
     .logo_side_container {
         display: flex;
+        position:absolute;
     }
-
-@media (max-width: 768px) {
-    /* Navigation */
-    .grid_container_nav {
-        display: none; /* Desktop-Navigation weiterhin versteckt */
-    }
-}
-@media (max-width: 425px) {
-  /* Navigation */
-  .grid_container_nav {
-    display: none; /* Desktop-Navigation weiterhin versteckt */
-}
-}
 }
 /* ################################################################*/
 /* 3. Hauptteil
@@ -338,6 +324,17 @@ nav {
     padding: 0;
     width: 100%;
     height: 100%;
+}
+
+.main_background {
+    position:relative;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-repeat: no-repeat; /* Verhindert Wiederholung des Bildes */
 }
 
 .main_button_container {
@@ -405,17 +402,7 @@ nav {
 
 
 
-.main_background {
-    position:relative;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 2;
-    background-repeat: no-repeat; /* Verhindert Wiederholung des Bildes */
-    background-size: cover; /* Skaliert das Bild proportional, um den gesamten Bereich zu füllen */
-    background-position: center; /* Zentriert das Bild im Container */
-}
+
 
 #background_blur {
     transition: filter 0.3s ease; /* Für sanfte Übergänge */
@@ -460,58 +447,9 @@ h2 {
 
 /* Anpassungen für 1280px */
 @media (max-width: 1280px) {
-    .main_background {
-        margin: 0;
-        padding: 0;
-        height: 400px;
-        width: 1280px;
-        background-repeat: no-repeat; /* Verhindert Wiederholung des Bildes */
-        background-size: cover; /* Skaliert das Bild proportional, um den gesamten Bereich zu füllen */
-        background-position: center; /* Zentriert das Bild im Container */
-    }
-    #main_sign {
-        font-size: 1,5rem;
-        margin: 1.5rem;
-        margin-bottom: 2em;
-    }
+   
 
-    .main_welcome {
-        margin: 1.5rem auto; /* Zentriert den Text und lässt die obere/untere Margin gleich */
-        max-width: 800px; /* Begrenzung der maximalen Breite */
-        padding: 0 1rem; /* Fügt Innenabstand für kleine Bildschirme hinzu */
-        font-size: large;
-        text-align: justify;
-        line-height: 1.875rem; /* Bessere Lesbarkeit (entspricht ca. 30px) */
-    }
-
-    h1 {
-        margin: 1.5rem auto; /* Zentriert den Text und lässt die obere/untere Margin gleich */
-        max-width: 800px; /* Begrenzung der maximalen Breite */
-        padding: 0 1rem; /* Fügt Innenabstand für kleine Bildschirme hinzu */
-        margin-top: 3rem;
-        line-height: 1.875rem; /* Bessere Lesbarkeit (entspricht ca. 30px) */
-    }
-
-    h2 {
-        margin: 1.5rem auto; /* Zentriert den Text und lässt die obere/untere Margin gleich */
-        max-width: 765px; /* Begrenzung der maximalen Breite */
-        color: rgba(95, 95, 95, 0.302);
-        line-height: 1.875rem; /* Bessere Lesbarkeit (entspricht ca. 30px) */
-    }
-    #main_sign {
-
-        margin: 1.5rem auto; /* Zentriert den Text und lässt die obere/untere Margin gleich */    
-        color: rgba(95, 95, 95, 0.302);
-        max-width: 765px; /* Begrenzung der maximalen Breite */
-        line-height: 1.875rem; /* Bessere Lesbarkeit (entspricht ca. 30px) */
-        margin-bottom: 5rem;
-        padding: 0;
-        font-size: large;
-        font-weight: bold;
-    }
 }
-
-
 
 /* ====================================================== */
 /* Grid für die Team-Seite */
@@ -520,56 +458,178 @@ h2 {
 
 .grid_container_team {
     display: grid;
-    grid-gap: 1.5em; /* Abstand zwischen den Grid-Items */
-    margin: 2em; /* Abstand zum Seitenrand */
-    padding: 0;
-    height: 800px;
-    width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsives Layout */
+    grid-template-columns: repeat(2, 2fr); /* 2 Spalten */
+    grid-template-rows: auto auto; /* Höhe passt sich an den Inhalt an */
+    grid-gap: 1.5em;
+    margin: 0 auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    padding: 1.5em;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    height: auto; /* Gesamtcontainer passt sich der Höhe an */
+    width: 80%;
+    max-width: 1200px;
+    background-color: #98723935;
 }
 
-.grid_team_item {
+.grid_team_item{
+    position: relative; /* Referenz für absolute Positionierung der Kinder */
     display: flex;
     flex-direction: column; /* Elemente vertikal anordnen */
     align-items: center; /* Zentrierung horizontal */
     text-align: center;
-    height: 500px;
+    justify-self: center;
+    height: auto; /* Gleiche Höhe wie das Bild */
+    width: 100%; /* Gleiche Breite wie das Bild */
+    max-width: 400px;
+    max-height: 500px;;
     gap: 0.5em; /* Abstand zwischen Bild und Text */
-    border: 1px solid #ccc; /* Rahmen um das Item */
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15); /* Schatteneffekt */
-    border-radius: 10px; /* Runde Ecken */
-    padding: 1.5em; /* Innenabstand */
-    margin: 1.5em; /* Außenabstand */
-    background-color: #f9f9f9; /* Heller Hintergrund */
-}
-
-.grid_team_item img {
-    height: 15em;
-    width: 10em;
-    object-fit: cover; /* Kein Verzerren des Bildes */
-    margin: 0;
+    padding: 0; /* Innenabstand */
+    margin: 0; /* Außenabstand */
+    overflow: hidden; /* Verhindert, dass Inhalte außerhalb des Containers sichtbar werden */
+    z-index: 5;
+    background-color: #67676700;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.218);
 }
 
 .grid_team_item h4 {
-    margin-bottom: 0.5em; /* Abstand zum unteren Text */
-    padding-bottom: 0.5em; /* Innenabstand zur Trennlinie */
-    border-bottom: 1px solid #ccc; /* Trennlinie */
-    width: 100%; /* Linie über die gesamte Breite */
+    margin-left: 0.5em;
+    margin-bottom: 0.2em;
+    border-bottom: 1px solid #a09f9fd2; /* Trennlinie */
+    width: 95%; /* Linie über die gesamte Breite */
     text-align: center;
     font-size: 1.2em; /* Größere Schrift für Überschrift */
-    color: #444; /* Dezente Schriftfarbe */
+    color: #eae9e9ea; /* Dezente Schriftfarbe */
 }
 
-.grid_team_item div {
-    margin: 0.5em 0; /* Einheitlicher Abstand oben und unten */
-    font-size: 0.9em; /* Kleinere Schriftgröße für Details */
-    color: #666; /* Etwas hellere Farbe für Details */
+.grid_container_team h2 {
+    text-align: center;
+    justify-self: center;
+    margin-left: 4em;
+    margin-bottom: 0.2em;
+    border-bottom: 1px solid #a09f9fd2; /* Trennlinie */
+    width: 70%; /* Linie über die gesamte Breite */
+    font-size: 1.2em; /* Größere Schrift für Überschrift */
+    color: #000000ea; /* Dezente Schriftfarbe */
+}
+
+.grid_container_team p {
+    margin-top: 1em;
+    color: rgb(0, 0, 0);
+}
+
+
+ /* ITEM 1 im Grid für Bild und Text */
+.grid_team_item.item1{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.grid_team_text1 {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+    text-align: center;
+}
+
+ /* ITEM 2 im Grid für Bild und Text */
+.grid_team_item.item2{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.grid_team_text2 {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
     text-align: center;
 }
 
 
+ /* ITEM 3 im Grid für Bild und Text */
+.grid_team_item.item3{
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.grid_team_text3 {
+    grid-column: 2;
+    grid-row: 3;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+    text-align: center;
+}
 
 
+ /* ITEM 4 im Grid für Bild und Text */
+.grid_team_item.item4{
+    grid-column: 2;
+    grid-row: 4;
+}
+
+.grid_team_text4 {
+    grid-column: 1;
+    grid-row: 4;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+    text-align: center;
+}
+
+
+.grid_team_item img {
+    height: 500px;
+    width: 400px;
+    object-fit: cover; /* Kein Verzerren des Bildes */
+    margin: 0;     
+}
+
+
+.grid_team_item div {
+    margin: 0; /* Einheitlicher Abstand oben und unten */
+    font-size: 0.9em; /* Kleinere Schriftgröße für Details */
+    color: #dededee3; /* Etwas hellere Farbe für Details */
+    text-align: center;
+}
+
+.team_info_container {
+    position: absolute; /* Absolut positioniert im Container */
+    display: flex; /* Flexbox für Inhalte */
+    text-align: center;
+    justify-content: center; /* Inhalte zentrieren */
+    padding: 0;
+    margin: 0;
+    top: 0; /* Beginn des Infofelds oben */
+    left: 0; /* Beginn des Infofelds links */
+    width: 100%; /* Vollständige Breite des Containers */
+    height: 0; /* Vollständige Höhe des Containers */
+    background-color: #00000062; /* Hintergrundfarbe mit Transparenz */
+    opacity: 1; /* Unsichtbar bei Standardzustand */
+    overflow: hidden;
+    z-index: 10; /* Höher als das Bild */
+    align-items: center; /* Inhalte horizontal zentrieren */
+    transition: all 0.9s ease; /* Übergang für die Sichtbarkeit */
+}
+
+.team_info_container ul {
+    margin-bottom: -17em;
+}
+
+.team_info_container li {
+    margin-bottom: 1em;
+    list-style-type:none;
+}
+
+.grid_team_item:hover .team_info_container {
+    height: 100%;
+    opacity: 1;
+}
 
 /* ====================================================== */
 /* Konfiguration der Behandlungsseite */
@@ -618,6 +678,27 @@ h2 {
     text-align: justify;
     line-height: 1.875rem; /* Bessere Lesbarkeit (entspricht ca. 30px) */
 }
+/* ====================================================== */
+/* Konfiguration Kostenseite*/
+/* ====================================================== */
+
+
+
+
+.cost_container {
+    position: relative;
+    display: flex;
+    margin: 0;
+    margin-top: 15em;
+    margin-bottom: 15em;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+}
+
+
+
 
 
 /* ====================================================== */
@@ -819,26 +900,29 @@ h2 {
 /* ################################################################*/
 
 .site-footer {
-    display: flex;
-    margin: 0 auto; /* zentriert die gesamte Fußzeile */
+    position: relative;
     padding: 0;
+    margin: 0;
     height: 120px;
     width: 100%;
 }
 
 .grid_container_footer {
     display: grid;
-    justify-items: center; /* horizontale Zentrierung */
-    align-items: center; /* vertikale Zentrierung */
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* responsive Spalten */
-    margin: 0 auto; /* gleichmäßige Reduktion von links und rechts */
     padding: 0;
-    width: 100%;
+    margin: 0;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));                
+    width: 100%; /* Volle Breite */
+    height: 100%; /* Passt sich der Höhe des Inhalts an */
     background-color: #98723984;
 }
 
+
 .grid_footer_item {
     display: flex;
+    height: auto;
     padding: 0;
     margin: 0;
     font-size: large;
@@ -862,18 +946,8 @@ h2 {
     filter:drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.179));
 }
 
-
-
-/* Optional: Anpassungen für kleinere Bildschirme */
-@media (max-width: 768px) {
-    .grid_container_footer {
-        grid-template-columns: 1fr; /* Einzelspalte bei kleinen Viewports */
-    }
-
-    .grid_footer_item {
-        margin: 1rem auto; /* Zentrierte Inhalte */
-        font-size: medium; /* Kleinere Schriftgröße */
-    }
+@media (max-width: 1280px) {
+ 
 }
 
  
@@ -887,7 +961,7 @@ h2 {
 .footer_button {
     position: fixed; /* Positioniert den Button an einer festen Stelle */
     right: 20px; /* Abstand vom rechten Rand */
-    bottom: 100px; /* Abstand vom unteren Rand */
+    bottom: 140px; /* Abstand vom unteren Rand */
     background-color: rgba(152, 114, 57, 0.445); /* Hintergrundfarbe */
     box-shadow: 0px 2px 4px rgba(153, 107, 37, 0.571); /* Schatten */
     width: 60px; /* Breite des Buttons */
@@ -961,7 +1035,7 @@ h2 {
 
 /* Zustand mit neuer Position */
 .footer_button.rotate_button {
-    bottom: 92vh; /* Verschiebt den Button um 500px */
+    bottom: 90vh; /* Verschiebt den Button um 500px */
     transition: bottom 0.5s ease-in-out; /* Animation für die neue Position */
     transform: rotate(180deg);
 }
@@ -992,31 +1066,34 @@ h2 {
 .content-container {
     max-width: 800px;
     margin: 2em auto;
+    margin-top: 7em;
     padding: 1em 2em;
-    background: #fff;
+    background: #ffffff8b;
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.551);
 }
 
 /* Überschriften */
 .section-title, .subsection-title {
-    color: rgba(156, 212, 203, 0.626);
+    color: #98723998;
     margin: 0;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
-
+    
 .section-title {
-    border-bottom: 2px solid rgba(156, 212, 203, 0.626);
+    border-bottom: 2px solid #98723983;
 }
 
 /* Links */
 .link {
-    color: rgba(140, 218, 205, 0.831);
+    color: #9872398e;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .link:hover {
+    color: #987239df;
     text-decoration: underline;
 }
 
@@ -1031,9 +1108,9 @@ h2 {
 
 /* Hervorhebung (Box für rechtliche Hinweise oder Downloads) */
 .highlight-box {
-    background: #f3f4f6;
+    background: #0000000b;
     padding: 0.5em;
-    border-left: 4px solid rgba(156, 212, 203, 0.626);
+    border-left: 4px solid #9872397c;
     margin: 1em 0;
 }
 
