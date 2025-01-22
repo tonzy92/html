@@ -13,10 +13,10 @@
     <!-- Kopfbereich der Website -->
     <header>
         <nav id="navbar">
+            <div id="logo_shadow" class="grid_nav_item_logo">
+                <img src="../IMAGES/logo.png" alt="logo">
+            </div>
             <div class="grid_container_nav" id="navbar_grid">
-                    <div class="grid_nav_item">
-                        <img id="logo_shadow" src="../IMAGES/logo.png" alt="logo">
-                    </div>
                     <div class="grid_nav_item"><a href="index.html">Willkommen</a></div>
                     <div class="grid_nav_item"><a href="team.html">Team</a></div>
                     <div class="grid_nav_item"><a href="treatment.html">Behandlung</a></div>
@@ -27,21 +27,22 @@
         </nav>
 
         <!-- Mobiler Button -->
-      <div class="mini_banner">
-                <button class="menuButton" id="menuButton" onclick ="toggleNav()">☰</button>
-                <div class="logo_side_container">
-                    <img id="logo_shadow_side" src="../IMAGES/logo.png" alt="logo">
-                </div>
-        
-                <div id="mySidenav" class="sidenav">
-                    <a href="index.html">Willkommen</a>
-                    <a href="team.html">Das Team</a>
-                    <a href="treatment.html">Behandlung</a>
-                    <a href="cost.html">Kosten</a>
-                    <a href="contact.html">Kontakt</a>
-                    <a id="last_sidenav_a" href="route.html">Anfahrt</a>
+         <div class="mini_banner_container">
+            <div class="mini_banner">
+                        <button class="menuButton" id="menuButton" onclick ="toggleNav()">☰</button>
+                        <div class="logo_side_container">
+                            <img id="logo_shadow_side" src="../IMAGES/logo.png" alt="logo">
+                        </div>
+                </div>  
+            </div> 
+            <div id="mySidenav" class="sidenav">
+                <a href="index.html">Willkommen</a>
+                <a href="team.html">Das Team</a>
+                <a href="treatment.html">Behandlung</a>
+                <a href="cost.html">Kosten</a>
+                <a href="contact.html">Kontakt</a>
+                <a id="last_sidenav_a" href="route.html">Anfahrt</a>
             </div>
-        </div>  
     </header>
 
     <main>
@@ -70,18 +71,22 @@
             <img class="main_background" id="background_blur" src="../IMAGES/background1.webp" alt="Hintergrundbild">
         </div>
         
-        <h1>Willkommen</h1>
-        <h2>Ich freue mich, Sie auf meiner Homepage begrüßen zu dürfen</h2>
-        
-        <p class="main_welcome">
-            <br>
-            Ich lade Sie herzlich ein, sich auf meiner Seite über mein Angebot zu informieren und freue mich darauf, Sie persönlich kennenzulernen.
-        </p>
-        
-        <p id="main_sign">
-            Ihre Marcella Beljo <br> 
-            (Psychotherapeutin, spezialisiert auf Suchterkrankungen)
-        </p>
+        <div class="grid_welcome">
+            <div class="welcome_container">
+                <h1>Willkommen</h1>
+                <h2>Ich freue mich, Sie auf meiner Homepage begrüßen zu dürfen</h2>
+                <p>
+                    <br>
+                Ich lade Sie herzlich ein, sich auf meiner Seite über mein Angebot zu informieren und freue mich darauf, Sie persönlich kennenzulernen.
+                </p>
+                <p id="main_sign">
+                    Ihre Marcella Beljo <br>
+                    (Psychotherapeutin, spezialisiert auf Suchterkrankungen)
+                </p>
+            </div>
+    
+        </div>
+      
     </main>
 
     <!-- Fußbereich -->

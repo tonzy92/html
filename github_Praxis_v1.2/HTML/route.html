@@ -12,31 +12,28 @@
     <!-- Kopfbereich der Website -->
     <header>
         <nav id="navbar">
+            <div id="logo_shadow" class="grid_nav_item_logo">
+                <img src="../IMAGES/logo.png" alt="logo">
+            </div>
             <div class="grid_container_nav" id="navbar_grid">
-                    <div class="grid_nav_item">
-                        <img id="logo_shadow" src="../IMAGES/logo.png" alt="logo">
-                    </div>
                     <div class="grid_nav_item"><a href="index.html">Willkommen</a></div>
                     <div class="grid_nav_item"><a href="team.html">Team</a></div>
                     <div class="grid_nav_item"><a href="treatment.html">Behandlung</a></div>
                     <div class="grid_nav_item"><a href="cost.html">Kosten</a></div>
                     <div class="grid_nav_item"><a href="contact.html">Kontakt</a></div>
                     <div class="grid_nav_item"><a href="route.html">Anfahrt</a></div>
-                
-
             </div>
         </nav>
 
-        <!-- Mobiler Button -->
-      <div class="mini_banner">
-                <button class="menuButton" id="menuButton" onclick ="toggleNav()">☰</button>
-
-                <div class="logo_side_container">
-                    <img id="logo_shadow_side" src="../IMAGES/logo.png" alt="logo">
-                </div>
-      </div>  
-
-           
+          <!-- Mobiler Button -->
+          <div class="mini_banner_container">
+            <div class="mini_banner">
+                        <button class="menuButton" id="menuButton" onclick ="toggleNav()">☰</button>
+                        <div class="logo_side_container">
+                            <img id="logo_shadow_side" src="../IMAGES/logo.png" alt="logo">
+                        </div>
+                </div>  
+            </div> 
             <div id="mySidenav" class="sidenav">
                 <a href="index.html">Willkommen</a>
                 <a href="team.html">Das Team</a>
@@ -44,9 +41,9 @@
                 <a href="cost.html">Kosten</a>
                 <a href="contact.html">Kontakt</a>
                 <a id="last_sidenav_a" href="route.html">Anfahrt</a>
-          </div>
-
+            </div>
     </header>
+
     
     <main>
         <!-- Hauptinhalt: Anfahrtsbeschreibung -->
@@ -75,42 +72,40 @@
             <img class="main_background_route" src="../IMAGES/background3.webp" alt="Hintergrundbild">
         </div>
   
-        <div class="route_wrapper">
-
-           
-            
             <!-- Text-Bereich -->
-            <div class="route_container">
-                <h2 class="h2_route">Anfahrt - Beschreibung</h2>
-
-                <p>Sie finden meine Praxis für Psychotherapie zentral gelegen in der Nähe der Bergedorfer Innenstadt. Der Eingang befindet sich direkt an der Straße Reinbeker Weg.</p>
-                <br>
+             <div class="grid_route">
+                <div class="route_container">
+                    <h2 class="h2_route">Anfahrt - Beschreibung</h2>
+    
+                    <p>Sie finden meine Praxis für Psychotherapie zentral gelegen in der Nähe der Bergedorfer Innenstadt. Der Eingang befindet sich direkt an der Straße Reinbeker Weg.</p>
+                    <br>
+                    
+                    <h3 class="h3_route">Anfahrt mit öffentlichen Verkehrsmitteln</h3>
+                    <ul>
+                        <li>Nutzen Sie am besten die S2 oder den RE1 bis zur Haltestelle „Bergedorf Bf“.</li>
+                        <li>Von dort aus sind es ca. 10 Minuten Fußweg entlang des Reinbeker Wegs.</li>
+                    </ul>
                 
-                <h3 class="h3_route">Anfahrt mit öffentlichen Verkehrsmitteln</h3>
-                <ul>
-                    <li>Nutzen Sie am besten die S2 oder den RE1 bis zur Haltestelle „Bergedorf Bf“.</li>
-                    <li>Von dort aus sind es ca. 10 Minuten Fußweg entlang des Reinbeker Wegs.</li>
-                </ul>
-            
-                <h3 class="h3_route">Anfahrt mit dem Auto</h3>
-                <ul>
-                    <li>Es gibt kostenpflichtige Parkmöglichkeiten direkt am Reinbeker Weg sowie in den umliegenden Straßen.</li>
-                    <li>Beispiele: An der Sternwarte oder in der Hansastraße.</li>
-                </ul>
-                <br>
-            
-                <h3 class="h3_route">Barrierefreiheit</h3>
-                <p>Bitte beachten Sie, dass es sich bei meiner Praxis um keine barrierefreie Räumlichkeit handelt.</p>
-            </div>
-            
-            
-             <!-- Map-Bereich -->
-             <div class="route_map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2373.7759320633604!2d10.215499477224368!3d53.49033327233136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b1f28a04a7ba15%3A0x72a8ba8285be041!2sReinbeker%20Weg%2021%2C%2021029%20Hamburg!5e0!3m2!1sde!2sde!4v1737493990507!5m2!1sde!2sde"
-                 style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-                  
-        </div>
+                    <h3 class="h3_route">Anfahrt mit dem Auto</h3>
+                    <ul>
+                        <li>Es gibt kostenpflichtige Parkmöglichkeiten direkt am Reinbeker Weg sowie in den umliegenden Straßen.</li>
+                        <li>Beispiele: An der Sternwarte oder in der Hansastraße.</li>
+                    </ul>
+                    <br>
+                
+                    <h3 class="h3_route">Barrierefreiheit</h3>
+                    <p>Bitte beachten Sie, dass es sich bei meiner Praxis um keine barrierefreie Räumlichkeit handelt.</p>
+                </div>
+                
+                
+                 <!-- Map-Bereich -->
+                 <div class="route_map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2373.7759320633604!2d10.215499477224368!3d53.49033327233136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b1f28a04a7ba15%3A0x72a8ba8285be041!2sReinbeker%20Weg%2021%2C%2021029%20Hamburg!5e0!3m2!1sde!2sde!4v1737493990507!5m2!1sde!2sde"
+                     style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                      
+             </div>
+         
     </main>
     
   <!-- Fußbereich -->
