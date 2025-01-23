@@ -470,7 +470,6 @@ nav {
     height: 100%;
     width: 100%;
     z-index: 2;
-
     background-repeat: no-repeat; /* Verhindert Wiederholung des Bildes */
 }
 
@@ -675,7 +674,6 @@ nav {
     height: 100%;
 }
 
-
 .grid_treatment{
     display: grid;
     grid-template-columns: 1fr 765px 1fr;
@@ -695,11 +693,9 @@ nav {
 }
 
 .treatment_container p{
-    line-height: 1.875;
-    font-size: 15px;
+    line-height: 2;
+    font-size: 1px;
 }
-
-
 
 #h2_treatment {
     display: flex;
@@ -773,27 +769,24 @@ nav {
 
 .contact-container {
     display: grid;
-    margin: 0 auto;
-    margin: 0;
+    grid-template-columns: 300px 465; /* Zwei Spalten */
     margin-top: 4em;
     margin-bottom: 4em;
     padding: 1em;
-    grid-template-columns: 265px 500px; /* Zwei Spalten */
-    gap: 1rem;
-    width: 100%;
+    gap: 1em;
+    width: 765px;
     height: 100%;
     background: white;
-    justify-content: center;
+    justify-self: center;
 }
-
-
-
 /* Kontaktinformationen (linke Spalte) */
 .contact-info {
     margin: 0;
     padding: 0;
+    grid-column: 1;
     font-size: 16px;
     line-height: 1.5;
+    width: 200px;
 }
 
 .contact-info h2 {
@@ -803,6 +796,7 @@ nav {
     text-align: start;
     font-size: 24px;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 /* Formular (rechte Spalte) */
@@ -810,6 +804,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Zwei Spalten */
     gap: 20px;
+    grid-column: 2;
 }
 
 .contact-form .form-group {
@@ -1268,7 +1263,6 @@ nav {
     .main_background{
         height: 300px;
     }
-
     .grid_welcome{
         height: 500px;    
     }
@@ -1289,6 +1283,300 @@ nav {
         color: rgba(95, 95, 95, 0.46); /* Dezente Farbe für Unterschrift */
     }
 }
+
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/*  Media Queries team.html */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+    .grid_team_text1 h2{
+        margin: 0;
+        margin-right: 0.5em;
+    }
+    .grid_team_text2 h2{
+        margin: 0;
+        margin-right: 0.5em;
+    }
+    .grid_team_text3 h2{
+        margin: 0;
+        margin-right: 0.5em;
+    }
+    .grid_team_text4 h2{
+        margin: 0;
+        margin-right: 0.5em;
+    }
+ 
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width: 375px) and (max-width: 425px)  {
+    .main_background_team {
+        height: 200px;
+    } 
+    .grid_container_team{
+        display: flex;
+        flex-direction: column; /* Elemente untereinander anordnen */
+        gap: 10px; /* Abstand zwischen den Elementen */ 
+    } 
+
+    .grid_team_item.item1{
+        display: flex;
+        justify-self: center;
+    }
+    .grid_team_text1 h2{
+        margin: 0;
+        margin-bottom: 1em;
+        padding: 0;
+    }
+    .grid_team_text1 p{
+        margin: 0;
+        padding: 0;
+        height: 300px;
+    }
+
+    .grid_team_item.item2{
+        display: flex;
+        justify-self: center;
+    }
+    .grid_team_text2 h2{
+        margin: 0;
+        margin-bottom: 1em;
+        padding: 0;
+    }
+    .grid_team_text2 p{
+        margin: 0;
+        padding: 0;
+        height: 300px;
+    }
+    .grid_team_item.item3{
+        display: flex;
+        justify-self: center;
+    }
+    .grid_team_text3 h2{
+        margin: 0;
+        margin-bottom: 1em;
+        padding: 0;
+    }
+    .grid_team_text3 p{
+        margin: 0;
+        padding: 0;
+        height: 300px;
+    }
+    .grid_team_item.item4{
+        display: flex;
+        justify-self: center;
+    }
+    .grid_team_text4 h2{
+        margin: 0;
+        margin-bottom: 1em;
+        padding: 0;
+    }
+    .grid_team_text4 p{
+        margin: 0;
+        padding: 0;
+        height: 300px;
+    }
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/*  Media Queries treatment.html */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+.grid_treatment{
+    height: 500px;
+}
+.treatment_container {
+     height: 100%;
+     width: 700px;
+     margin: 1em;
+     padding: 1em;
+}
+.treatment_container h2 {
+    font-size: 25px;
+}
+.treatment_container p {
+    font-size: 14px;
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width: 375px) and (max-width: 425px)  {
+    .background_container_treatment{
+        height: 200px;
+        margin-top: 2em;
+    }
+    .grid_treatment{
+        height: 700px;
+    }
+    .treatment_container {
+         height: 680px;
+         width: 350px;
+         margin: 0;
+         padding: 2em;
+    }
+    .treatment_container h2 {
+        font-size: 20px;
+    }
+    .treatment_container p {
+        font-size: 13px;
+    }
+
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/*  Media Queries costs.html */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+@media (max-width: 1156px){
+
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width: 375px) and (max-width: 425px)  {
+
+}
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/*  Media Queries contact.html */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+@media (max-width: 1156px){
+  
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width: 768px) and (max-width: 1024px) {
+    }
+    .contact-container {
+        grid-template-columns: 1fr; /* Eine Spalte */
+    }
+
+    .contact-form {
+        grid-template-columns: repeat(2, 1fr); /* Zwei Spalten */
+    }
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width: 375px) and (max-width: 425px) {
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        margin: 1em auto;
+        padding: 0;
+        width: 300px; /* Breite des Containers */
+    }
+
+    .contact-info {
+        font-size: 12px;
+        text-align: center; /* Zentrierung für bessere Lesbarkeit */
+    }
+
+    .contact-info h2 {
+        font-size: 18px;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column; /* Vertikales Layout */
+        gap: 10px; /* Abstand zwischen den Form-Feldern */
+    }
+
+    .contact-form label {
+        font-size: 14px; /* Einheitliche Schriftgröße */
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        height: 40px; /* Angemessene Höhe */
+        font-size: 14px; /* Lesbare Schriftgröße */
+        width: 100%; /* Volle Breite */
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .contact-form select {
+        appearance: none; /* Entfernt das Standard-Styling */
+        background-color: #fff;
+    }
+
+    .contact-form textarea {
+        height: 80px; /* Höhe für bessere Usability */
+        resize: vertical; /* Benutzer kann die Größe ändern */
+    }
+
+    .contact-form button {
+        height: 40px;
+        font-size: 16px;
+        background-color: #98723986;
+        border: none;
+        border-radius: 5px;
+        color: #000;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .contact-form button:hover {
+        background-color: #987239c3;
+    }
+}
+
+
+
+
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/*  Media Queries route.html */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+@media (max-width: 1156px){
+
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .grid_route{
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        width: 600px;
+        margin: 0;
+        padding: 0;
+    }
+    .route_container{
+        font-size: 15px;
+    }
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width: 375px) and (max-width: 425px)  {
+    .background_container_route{
+        height: 200px;
+        margin-top: 2em;
+    }
+    .grid_route{
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        width: 300px;
+        margin: 0;
+        padding: 0;
+    }
+    .route_container{
+        font-size: 13px;
+    }
+}
+
+
+
+
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 /*  Media Queries Footer*/
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
@@ -1305,3 +1593,4 @@ nav {
         font-size: 15px;
      }
 }
+
