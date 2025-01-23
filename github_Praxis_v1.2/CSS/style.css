@@ -1473,7 +1473,7 @@ nav {
 
     .contact-info {
         font-size: 12px;
-        text-align: center; /* Zentrierung für bessere Lesbarkeit */
+        text-align: left: 0;; /* Zentrierung für bessere Lesbarkeit */
     }
 
     .contact-info h2 {
