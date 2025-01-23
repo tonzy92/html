@@ -8,6 +8,9 @@
 /* Zentrales Stylesheet zum Importieren der Module 
 wird in den HTML-Dateien per link.*/
 
+
+
+
 /* ################################################################*/
 /* 0. Globale Einstellungen für die gesamte Website  */
 /* ################################################################*/
@@ -19,6 +22,7 @@ wird in den HTML-Dateien per link.*/
 html, body {
     width: 100%;
     height: 100%;
+    margin: 0;
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
 }
@@ -46,7 +50,6 @@ a[href^="tel"] {
 /* ################################################################*/
 /* 1. Kopfbereich
 /* ################################################################*/
-
 /* ################################################################*/
 /* 2. Hauptnavigation
 /* ################################################################*/
@@ -62,10 +65,10 @@ nav {
     z-index: 10;
     box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2); /* Schatten */
  }
+
 /* ====================================================== */
 /* Grid für Navigation */
 /* ====================================================== */
-
 
 .grid_container_nav {
     display: grid;
@@ -138,8 +141,7 @@ nav {
     text-align: center;
     background-color: #bfd9d7;
     min-width: 160px;
-    box-shadow: 0px 8px 
-    16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
   
@@ -166,6 +168,12 @@ nav {
     height: 85px; /* Verkleinerte Höhe */
     transition: all 0.5s ease-in-out;
 }
+
+
+
+
+
+
 
 /* ====================================================== */
 /* Gestaltung des Logos */
@@ -197,8 +205,11 @@ nav {
 
 
 
+
+
+
 /* ######################################################## */
-/* Media Queries Navigation*/
+/* Navigation kompakter als Mobile Version */
 /* ######################################################## */
 
 /* Hauptbutton */
@@ -299,32 +310,9 @@ nav {
     height: 100%;
 }
 
-/* Show menu button at smaller widths */
-@media (max-width: 1156px) {
-    #menuButton {
-        display: flex;
-    }
 
-    .grid_container_nav {
-        display: none; /* Versteckt die Desktop-Navigation */
-    }
 
-    #navbar {
-        display: none;
-    }
 
-    .sidenav {
-        display:block;
-    }
-
-    .logo_side_container {
-        display: flex;
-        position:absolute;
-    }
-    .mini_banner_container{
-        display: flex;
-    }
-}
 /* ################################################################*/
 /* 3. Hauptteil
 /* ################################################################*/
@@ -421,7 +409,7 @@ nav {
 
 .grid_welcome{
     display: grid;
-    grid-template-columns: 1fr 765px 1fr;
+    grid-template-columns: 1fr minmax(0, 765px) 1fr;
     height: 500px;
 }
 
@@ -448,22 +436,25 @@ nav {
     color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
 }
 .welcome_container p {
-    margin-top: 3em;
+    margin-top: 1em;
     text-align: justify; /* Text wird blockweise ausgerichtet */
 }
 #main_sign {
-    margin-top: 5em;
+    margin-top: 2em;
     font-weight: bold; /* Fettgedruckt für Unterschrift */
     color: rgba(95, 95, 95, 0.46); /* Dezente Farbe für Unterschrift */
 }
 
-/* Anpassungen für 1200px */
-@media (max-width: 1156px) {
-   
-    .main_button_container {
-        display: none;
-    }
+.main_button_container {
+    top: 20%; /* Noch weiter heruntergesetzt */
+    left: 5%;
+    width: 40px; /* Noch kleinere Größe */
+    height: 40px;
+}
 
+.info_field {
+    width: 150px; /* Noch schmaleres Infofeld */
+    font-size: 0.8rem; /* Noch kleinere Schriftgröße */
 }
 
 /* ====================================================== */
@@ -658,6 +649,11 @@ nav {
     opacity: 1;
 }
 
+
+
+
+
+
 /* ====================================================== */
 /* Konfiguration der Behandlungsseite */
 /* ====================================================== */
@@ -714,11 +710,17 @@ nav {
 
 
 
+
+
+
+
+
+
 /* ====================================================== */
 /* Konfiguration Kostenseite*/
 /* ====================================================== */
 
-.main_background_cost{
+.main_background_cost {
         position:relative;
         margin: 0;
         padding-top: 3.8em;
@@ -737,8 +739,14 @@ nav {
     padding: 0;
     height: 100%;
     width: 100%;
-    justify-content: space-around;
+    justify-content: center;
 }
+
+
+
+
+
+
 
 
 
@@ -777,6 +785,8 @@ nav {
     background: white;
     justify-content: center;
 }
+
+
 
 /* Kontaktinformationen (linke Spalte) */
 .contact-info {
@@ -861,6 +871,7 @@ nav {
     transform: scale(0.95); /* Verkleinert den Button leicht */
     background-color: #987239e1; /* Etwas dunkler beim Anklicken */
 }
+
 
 /* ====================================================== */
 /* Konfiguration der Anfahrt */
@@ -947,7 +958,6 @@ nav {
     max-width: 1165px; /* Begrenzung der maximalen Breite */
 }
 
-
 /* ################################################################*/
 /* 4. Fußbereich
 /* ################################################################*/
@@ -1003,7 +1013,6 @@ nav {
  
 }
 
- 
 
 
 /* ====================================================== */
@@ -1093,13 +1102,6 @@ nav {
     transform: rotate(180deg);
 }
 
-@media (max-width: 1156px) {
-    .footer_button {
-        display: none;
-    } 
-    
-    }
-
 
 /* ################################################################*/
 /* Impressum & Datenschutz
@@ -1167,3 +1169,139 @@ nav {
     margin: 1em 0;
 }
 
+
+
+
+
+
+
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/*  Media Queries Navigation*/
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (max-width: 1156px) {
+    #menuButton {
+        display: flex;
+    }
+    .grid_container_nav {
+        display: none; /* Versteckt die Desktop-Navigation */
+    }
+
+    #navbar {
+        display: none;
+    }
+
+    .sidenav {
+        display:block;
+    }
+
+    .logo_side_container {
+        display: flex;
+        position:absolute;
+    }
+    .mini_banner_container{
+        display: flex;
+    }
+}
+  @media (min-width: 375px) and (max-width: 425px) {
+    /* Regeln für Smartphones hier */
+    #logo_shadow_side {
+        height: 60px;
+        margin-top: 0.5em;
+    }
+    .sidenav a{
+        font-size: 14px;
+    }
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/*  Media Queries index.html */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/* Für Desktops und Laptops (Breite: 992px bis 1199px) */
+@media (max-width: 1156px){
+    /* Regeln für mittelgroße Bildschirme hier */
+
+    .main_button_container {
+        display: none;
+    } 
+    .grid_welcome{
+        padding: 2em;
+    }
+    .welcome_container{
+        font-size: 15x;
+    }
+    .welcome_container h1 {
+        font-size: 25px;
+        color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
+     }
+     .welcome_container h2 {
+        font-size: 18px;
+        color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
+     }
+     #main_sign {
+        font-size: 15px;
+        color: rgba(95, 95, 95, 0.46); /* Dezente Farbe für Unterschrift */
+    }
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+.welcome_container{
+    font-size: 18x;
+}
+.welcome_container h1 {
+    font-size: 25px;
+    color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
+ }
+ .welcome_container h2 {
+    font-size: 18px;
+    color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
+ }
+ #main_sign {
+    font-size: 15px;
+    color: rgba(95, 95, 95, 0.46); /* Dezente Farbe für Unterschrift */
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width: 375px) and (max-width: 425px)  {
+    .main_background{
+        height: 300px;
+    }
+
+    .grid_welcome{
+        height: 500px;    
+    }
+    .welcome_container {
+        font-size: 13px;
+        height: 100%;
+    }
+    .welcome_container h1 {
+        font-size: 20px;
+        color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
+     }
+     .welcome_container h2 {
+        font-size: 14px;
+        color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
+     }
+     #main_sign {
+        font-size: 11px;
+        color: rgba(95, 95, 95, 0.46); /* Dezente Farbe für Unterschrift */
+    }
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/*  Media Queries Footer*/
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (max-width: 1156px) {
+    .footer_button {
+        display: none;
+    } 
+    }
+@media (min-width: 375px) and (max-width: 425px) {
+    .grid_container_footer{
+        height: 120px;
+    } 
+     .grid_footer_item{
+        font-size: 15px;
+     }
+}
