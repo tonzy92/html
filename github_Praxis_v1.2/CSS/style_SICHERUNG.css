@@ -477,7 +477,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(2, 2fr); /* 2 Spalten */
     grid-template-rows: auto auto; /* Höhe passt sich an den Inhalt an */
-    grid-gap: 1.5em;
+    grid-gap: 5em;
     margin: 0 auto;
     margin-top: 3em;
     margin-bottom: 3em;
@@ -541,6 +541,7 @@ nav {
 .grid_team_item.item1{
     grid-column: 1;
     grid-row: 1;
+    margin-top: 2em;
 }
 
 .grid_team_text1 {
@@ -550,6 +551,12 @@ nav {
     height: 100%;
     justify-self: center;
     text-align: center;
+}
+
+.grid_team_text1 p{
+    font-size: 18px;
+    text-align: left;
+    line-height: 1.5;
 }
 
  /* ITEM 2 im Grid für Bild und Text */
@@ -1164,14 +1171,6 @@ nav {
     margin: 1em 0;
 }
 
-
-
-
-
-
-
-
-
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 /*  Media Queries Navigation*/
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
@@ -1291,12 +1290,28 @@ nav {
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
 @media (min-width: 768px) and (max-width: 1024px) {
-}
+
+   
+    .grid_team_item.item1{
+        display: flex;
+        justify-self: center;
+        height: 600px;
+        margin-top: 1em;
+    }
     .grid_team_text1 h2{
         margin: 0;
-        margin-right: 0.5em;
+        margin-bottom: 1em;
+        padding: 0;
     }
+    .grid_team_text1 p{
+        margin: 0;
+        padding: 0;
+        height: 600px;
+        font-size: 14px;
+    }
+
     .grid_team_text2 h2{
         margin: 0;
         margin-right: 0.5em;
@@ -1309,7 +1324,7 @@ nav {
         margin: 0;
         margin-right: 0.5em;
     }
- 
+}
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 @media (min-width: 375px) and (max-width: 425px)  {
     .main_background_team {
@@ -1318,12 +1333,17 @@ nav {
     .grid_container_team{
         display: flex;
         flex-direction: column; /* Elemente untereinander anordnen */
+        padding: 1em;
         gap: 10px; /* Abstand zwischen den Elementen */ 
     } 
 
     .grid_team_item.item1{
         display: flex;
         justify-self: center;
+        margin: 0;   
+    }
+    .grid_team_text1 {
+        height: 650px;
     }
     .grid_team_text1 h2{
         margin: 0;
@@ -1573,9 +1593,6 @@ nav {
         font-size: 13px;
     }
 }
-
-
-
 
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 /*  Media Queries Footer*/

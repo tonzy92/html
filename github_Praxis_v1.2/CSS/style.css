@@ -169,12 +169,6 @@ nav {
     transition: all 0.5s ease-in-out;
 }
 
-
-
-
-
-
-
 /* ====================================================== */
 /* Gestaltung des Logos */
 /* ====================================================== */
@@ -202,11 +196,6 @@ nav {
     width: 140px;
     height: 70px;
 }
-
-
-
-
-
 
 /* ######################################################## */
 /* Navigation kompakter als Mobile Version */
@@ -477,7 +466,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(2, 2fr); /* 2 Spalten */
     grid-template-rows: auto auto; /* Höhe passt sich an den Inhalt an */
-    grid-gap: 1.5em;
+    grid-gap: 5em;
     margin: 0 auto;
     margin-top: 3em;
     margin-bottom: 3em;
@@ -541,6 +530,7 @@ nav {
 .grid_team_item.item1{
     grid-column: 1;
     grid-row: 1;
+    margin-top: 2em;
 }
 
 .grid_team_text1 {
@@ -550,6 +540,12 @@ nav {
     height: 100%;
     justify-self: center;
     text-align: center;
+}
+
+.grid_team_text1 p{
+    font-size: 18px;
+    text-align: left;
+    line-height: 1.5;
 }
 
  /* ITEM 2 im Grid für Bild und Text */
@@ -1164,14 +1160,6 @@ nav {
     margin: 1em 0;
 }
 
-
-
-
-
-
-
-
-
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 /*  Media Queries Navigation*/
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
@@ -1291,12 +1279,28 @@ nav {
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
 @media (min-width: 768px) and (max-width: 1024px) {
-}
+
+   
+    .grid_team_item.item1{
+        display: flex;
+        justify-self: center;
+        height: 600px;
+        margin-top: 1em;
+    }
     .grid_team_text1 h2{
         margin: 0;
-        margin-right: 0.5em;
+        margin-bottom: 1em;
+        padding: 0;
     }
+    .grid_team_text1 p{
+        margin: 0;
+        padding: 0;
+        height: 600px;
+        font-size: 14px;
+    }
+
     .grid_team_text2 h2{
         margin: 0;
         margin-right: 0.5em;
@@ -1309,7 +1313,7 @@ nav {
         margin: 0;
         margin-right: 0.5em;
     }
- 
+}
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 @media (min-width: 375px) and (max-width: 425px)  {
     .main_background_team {
@@ -1318,12 +1322,17 @@ nav {
     .grid_container_team{
         display: flex;
         flex-direction: column; /* Elemente untereinander anordnen */
+        padding: 1em;
         gap: 10px; /* Abstand zwischen den Elementen */ 
     } 
 
     .grid_team_item.item1{
         display: flex;
         justify-self: center;
+        margin: 0;   
+    }
+    .grid_team_text1 {
+        height: 650px;
     }
     .grid_team_text1 h2{
         margin: 0;
@@ -1377,6 +1386,25 @@ nav {
         margin: 0;
         padding: 0;
         height: 300px;
+    }
+
+    .team_info_container {
+        opacity: 0; /* Unsichtbar am Anfang */
+        visibility: hidden; /* Nicht klickbar */
+        transition: opacity 0.5s ease-in-out;
+        animation: showContainer 2s forwards; /* Animation startet automatisch */
+    }
+    
+    /* Animation, um den Container erscheinen zu lassen */
+    @keyframes showContainer {
+        0% {
+            opacity: 0;
+            visibility: hidden;
+        }
+        100% {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 }
 
@@ -1473,7 +1501,7 @@ nav {
 
     .contact-info {
         font-size: 12px;
-        text-align: left: 0;; /* Zentrierung für bessere Lesbarkeit */
+        text-align: center; /* Zentrierung für bessere Lesbarkeit */
     }
 
     .contact-info h2 {
@@ -1528,11 +1556,6 @@ nav {
     }
 }
 
-
-
-
-
-
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 /*  Media Queries route.html */
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
@@ -1573,9 +1596,6 @@ nav {
         font-size: 13px;
     }
 }
-
-
-
 
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 /*  Media Queries Footer*/
