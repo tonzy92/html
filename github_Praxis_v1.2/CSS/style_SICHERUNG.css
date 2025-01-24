@@ -169,12 +169,6 @@ nav {
     transition: all 0.5s ease-in-out;
 }
 
-
-
-
-
-
-
 /* ====================================================== */
 /* Gestaltung des Logos */
 /* ====================================================== */
@@ -202,11 +196,6 @@ nav {
     width: 140px;
     height: 70px;
 }
-
-
-
-
-
 
 /* ######################################################## */
 /* Navigation kompakter als Mobile Version */
@@ -343,12 +332,15 @@ nav {
 .main_button_container {
     display: flex;
     position: absolute;
-    margin: 2rem 1rem 1rem 1rem;
-    padding: 0rem;
+    top: 17%; /* Noch weiter heruntergesetzt */
+    left: 2%;
+    margin: 0;
+    padding: 0;
     width: 50px;
     height: 50px;
     z-index: 3;
 }
+
 
 .main_button_info {
     margin: 0;
@@ -362,32 +354,49 @@ nav {
     transition: opacity 0.3s ease; /* Übergang hinzugefügt */
 }
 
+/* Verstecktes Infofeld */
 .info_field {
     position: absolute;
     margin: 0;
-    padding: 0 1.5rem; /* Für Innenabstand */
-    width: 250px;
+    padding: 1em;
+    width: 260px !important;
     height: 0; /* Ausgangshöhe */
     background-color: rgba(255, 255, 255, 0.766);
     border: none;
-    opacity: 1;
+    opacity: 0; /* Unsichtbar starten */
     z-index: 4;
-    overflow: hidden; /* Verhindert, dass der Inhalt außerhalb sichtbar wird */
-    transition: height 0.5s ease; /* Animiert die Höhe */
+    overflow: hidden; /* Inhalt verstecken */
+    transition: max-height 0.5s ease, opacity 0.5s ease; /* Kombinierte Übergänge */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Schatteneffekt */
 }
 
-.info_field h3 {
-    margin-top: 0;
-    padding-top: 0.5rem;
-    font-size: 1.2rem;
-    color: #333;
+
+
+.grit_days_time{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 1em;
 }
 
-.info_field p {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-    color: #555;
+.grit_days_time p {
+    font-size: 17px;
+    padding: 0.1em;
+}
+
+.info_p {
+    margin-top: 1em;
+    font-size: 16px;
+}
+
+.info_field h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.info_field a {
+    font-size: 16px !important;
+    font-weight: bold;
 }
 
 /* Button im Hintergrund ausblenden */
@@ -399,8 +408,9 @@ nav {
 /* Infofeld anzeigen */
 .main_button_container:hover .info_field {
     height: 280px; /* Zielhöhe */
-    opacity: 1; /* Sicherstellen, dass es sichtbar bleibt */
+    opacity: 1; /* Sichtbar machen */
 }
+
 
 #background_blur {
     transition: filter 0.3s ease; /* Für sanfte Übergänge */
@@ -443,18 +453,6 @@ nav {
     margin-top: 2em;
     font-weight: bold; /* Fettgedruckt für Unterschrift */
     color: rgba(95, 95, 95, 0.46); /* Dezente Farbe für Unterschrift */
-}
-
-.main_button_container {
-    top: 20%; /* Noch weiter heruntergesetzt */
-    left: 5%;
-    width: 40px; /* Noch kleinere Größe */
-    height: 40px;
-}
-
-.info_field {
-    width: 150px; /* Noch schmaleres Infofeld */
-    font-size: 0.8rem; /* Noch kleinere Schriftgröße */
 }
 
 /* ====================================================== */
@@ -1398,6 +1396,25 @@ nav {
         padding: 0;
         height: 300px;
     }
+
+    .team_info_container {
+        opacity: 0; /* Unsichtbar am Anfang */
+        visibility: hidden; /* Nicht klickbar */
+        transition: opacity 0.5s ease-in-out;
+        animation: showContainer 2s forwards; /* Animation startet automatisch */
+    }
+    
+    /* Animation, um den Container erscheinen zu lassen */
+    @keyframes showContainer {
+        0% {
+            opacity: 0;
+            visibility: hidden;
+        }
+        100% {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
 }
 
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
@@ -1548,11 +1565,6 @@ nav {
     }
 }
 
-
-
-
-
-
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 /*  Media Queries route.html */
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
@@ -1595,7 +1607,7 @@ nav {
 }
 
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
-/*  Media Queries Footer*/
+/*  Media Queri es Footer*/
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 @media (max-width: 1156px) {
     .footer_button {

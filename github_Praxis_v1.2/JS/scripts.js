@@ -132,6 +132,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector(".team_info_container");
 
