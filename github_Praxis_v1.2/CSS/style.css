@@ -250,7 +250,6 @@ nav {
 /* The side navigation menu */
 .sidenav {
     position: fixed; /* Bleibt an der gleichen Stelle, unabhängig vom Scrollen */
-    display: none;
     padding: 0;
     padding-top: 100px;
     height: auto; /* Volle Höhe des Viewports */
@@ -433,6 +432,7 @@ nav {
     justify-content: center;
     text-align: left;
     padding: 0;
+    padding-left: 1em;
     height: 100%;
     width: 100%;
 }

@@ -88,10 +88,9 @@ function toggleNav() {
     }
 }
 
-
 /* Set the width of the side navigation to 250px */
 function openNav() {
-    document.getElementById("mySidenav").style.width = "1280px";
+    document.getElementById("mySidenav").style.width = "100%";
   }
   
   /* Set the width of the side navigation to 0 */
@@ -100,7 +99,18 @@ function openNav() {
   }
 
 
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+}
 
+
+document.getElementById('menuButton').addEventListener('click', toggleNav);
+
+function toggleNav() {
+    const menu = document.getElementById('mobile-menu');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+}
 
 
 
@@ -148,10 +158,6 @@ document.addEventListener("DOMContentLoaded", function () {
         container.style.visibility = "hidden";
     });
 });
-
-
-
-
 
 
 
