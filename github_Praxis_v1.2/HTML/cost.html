@@ -29,6 +29,13 @@
     
         <!-- Verhindern, dass Suchmaschinen doppelte Inhalte indexieren -->
         <meta name="robots" content="index, follow">
+
+          <!-- Sicherheit (Content Security Policy) -->
+          <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+          img-src 'self' data: https:; 
+          script-src 'self'; 
+          style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; 
+          font-src 'self' https://cdnjs.cloudflare.com;">
     </head>
     
 
@@ -53,7 +60,7 @@
           <!-- Mobiler Button -->
           <div class="mini_banner_container">
             <div class="mini_banner">
-                        <button class="menuButton" id="menuButton" onclick ="toggleNav()">☰</button>
+                <button class="menuButton" id="menuButton">☰</button>
                         <div class="logo_side_container">
                             <img id="logo_shadow_side" src="../IMAGES/logo.png" alt="logo">
                         </div>
@@ -167,10 +174,4 @@
     </div>
 </footer>
 </body>
-<script>
-    function toggleMenu() {
-        const menu = document.getElementById('mobile-menu');
-        menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';          
-    }
-</script>
 </html>
