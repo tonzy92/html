@@ -73,20 +73,26 @@ window.onload = function() {
 
 
 
-// Toggle-Funktion für den Button
 function toggleNav() {
     const button = document.getElementById("menuButton");
-    const background = document.getElementById("background_blur"); // Hintergrund-Element
+    const sidenav = document.getElementById("mySidenav");
+    const menu = document.getElementById("mobile-menu");
 
+    if (sidenav && button) {
+        if (button.textContent === "☰") {
+            sidenav.style.width = "100%";
+            button.textContent = "✖";
+        } else {
+            sidenav.style.width = "0%";
+            button.textContent = "☰";
+        }
+    }
 
-    if (button.textContent === "☰") { // Zustand: Menü geschlossen
-        openNav();
-        button.textContent = "✖"; // Ändert den Button zu einem Kreuz;
-    } else { // Zustand: Menü geöffnet
-        closeNav();
-        button.textContent = "☰"; // Ändert den Button zurück zu ☰
+    if (menu) {
+        menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
     }
 }
+
 
 /* Set the width of the side navigation to 250px */
 function openNav() {
@@ -106,13 +112,6 @@ function openNav() {
 
 
 document.getElementById('menuButton').addEventListener('click', toggleNav);
-
-function toggleNav() {
-    const menu = document.getElementById('mobile-menu');
-    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-}
-
-
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -140,9 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     });
 });
-
-
-
 
 
 let isLaufbahnVisible = false; // Status, ob der laufbahn_container sichtbar ist
