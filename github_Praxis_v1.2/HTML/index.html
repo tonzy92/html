@@ -1,20 +1,67 @@
 <!DOCTYPE html>
 <html lang="de" id="top">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=yes">
-    <title>Meine Praxis</title>
-    <link href="../CSS/style.css" type="text/css" rel="stylesheet">
-    <script src="../JS/scripts.js" defer></script>
-</head>
+    <head>
+        <!-- Grundlegende Metadaten -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="format-detection" content="telephone=yes">
+        
+        <!-- SEO-Titel und Meta-Beschreibung -->
+        <title>Meine Praxis - Psychotherapie in Hamburg</title>
+        <meta name="description" content="Willkommen auf der Webseite meiner psychotherapeutischen Praxis in Hamburg. Informieren Sie sich über Behandlungsangebote, Kosten und Kontaktmöglichkeiten.">
+        
+        <!-- Keywords (optional, da Google sie selten nutzt, aber andere Suchmaschinen eventuell) -->
+        <meta name="keywords" content="Psychotherapie Hamburg, Suchterkrankungen, Psychotherapeutin Marcella Beljo, Behandlungskosten, Kontakt">
+        
+        <!-- Social Media und Sharing (Open Graph) -->
+        <meta property="og:title" content="Meine Praxis - Psychotherapie in Hamburg">
+        <meta property="og:description" content="Willkommen auf der Webseite meiner psychotherapeutischen Praxis. Informieren Sie sich über Behandlungen und Kontaktmöglichkeiten.">
+        <meta property="og:image" content="https://www.praxisbeljo.de/IMAGES/logo.png">
+        <meta property="og:url" content="https://www.praxisbeljo.de">
+        <meta property="og:type" content="website">
+    
+        <!-- JSON-LD: Strukturierte Daten -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "MedicalBusiness",
+          "name": "Psychotherapeutin Marcella Beljo",
+          "url": "https://www.praxisbeljo.de",
+          "logo": "https://www.praxisbeljo.de/IMAGES/logo.png",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Reinbeker Weg 21",
+            "addressLocality": "Hamburg",
+            "postalCode": "21029",
+            "addressCountry": "DE"
+          },
+          "telephone": "+494060856493",
+          "openingHours": "Mo,We,Th,Fr 08:00-12:00",
+          "description": "Psychotherapeutische Praxis spezialisiert auf Suchterkrankungen."
+        }
+        </script>
+        
+        <!-- Stylesheets und Skripte -->
+        <link href="../CSS/style.css" type="text/css" rel="stylesheet">
+        <script src="../JS/scripts.js" defer></script>
+        
+        <!-- Favicon (für Browser-Tab-Icon) -->
+        <link rel="icon" href="../IMAGES/logo.png" type="image/png">
+        
+        <!-- Verhindern, dass Suchmaschinen doppelte Inhalte indexieren -->
+        <meta name="robots" content="index, follow">
+    
+        <!-- Sicherheit (Content Security Policy) -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self'; style-src 'self' 'unsafe-inline';">
+    </head>
+    
 
 <body>
     <!-- Kopfbereich der Website -->
     <header>
         <nav id="navbar">
             <div id="logo_shadow" class="grid_nav_item_logo">
-                <img src="../IMAGES/logo.png" alt="logo">
+                <img src="../IMAGES/logo.png" alt="Logo der Psychotherapeutischen Praxis Marcella Beljo">
             </div>
             <div class="grid_container_nav" id="navbar_grid">
                     <div class="grid_nav_item"><a href="index.html">Willkommen</a></div>
@@ -46,33 +93,34 @@
     </header>
 
     <main>
-        <!-- Hauptinhalt -->
+         <!-- Hauptinhalt -->
       <!-- Font Awesome CSS einbinden -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-        <div class="main_button_container">
-            <button class="main_button_info">
-                <i class="fas fa-phone"></i>
-            </button>
+      <div class="main_button_container">
+          <button class="main_button_info">
+              <i class="fas fa-phone"></i>
+          </button>
+      
+          <div class="info_field">
+              <h3>Telefonische Sprechzeiten</h3>
+              <div class="grit_days_time">
+                  <p class="days">Montags:</p>
+                  <p class="time">08:00 - 12:00</p>
+                  <p class="days">Mittwochs:</p>
+                  <p class="time">08:00 - 12:00</p>
+                  <p class="days">Donnerstags:</p>
+                  <p class="time">08:00 - 12:00</p>
+                  <p class="days">Freitags:</p>
+                  <p class="time">08:00 - 12:00</p>
+              </div>
         
-            <div class="info_field">
-                <h3>Telefonische Sprechzeiten</h3>
-                <div class="grit_days_time">
-                    <p class="days">Montags:</p>
-                    <p class="time">08:00 - 12:00</p>
-                    <p class="days">Mittwochs:</p>
-                    <p class="time">08:00 - 12:00</p>
-                    <p class="days">Donnerstags:</p>
-                    <p class="time">08:00 - 12:00</p>
-                    <p class="days">Freitags:</p>
-                    <p class="time">08:00 - 12:00</p>
-                </div>
-          
-                <h3>Unsere Praxis</h3>
-                <p class="info_p">Reinbeker Weg 21<br>21029 Hamburg</p>
-                <p class="info_p">Tel.: <a href="tel:04060856493">040 60 85 64 93</a></p>
-            </div>
-        </div>
+              <h3>Unsere Praxis</h3>
+              <p class="info_p">Reinbeker Weg 21<br>21029 Hamburg</p>
+              <p class="info_p">Tel.: <a href="tel:04060856493">040 60 85 64 93</a></p>
+          </div>
+      </div>
+
 
         
         <div class="background_container">
@@ -85,7 +133,7 @@
                 <h2>Ich freue mich, Sie auf meiner Homepage begrüßen zu dürfen</h2>
                 <p>
                     <br>
-                Ich lade Sie herzlich ein, sich auf meiner Seite über mein Angebot zu informieren und freue mich darauf, Sie persönlich kennenzulernen.
+                Ich lade Sie herzlich ein, sich auf meiner Seite über mein Angebot zu informieren und freue mich darauf, <br>Sie persönlich kennenzulernen.
                 </p>
                 <p id="main_sign">
                     Ihre Marcella Beljo <br>

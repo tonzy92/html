@@ -92,7 +92,6 @@ nav {
     align-items: center; /* Vertikal zentriert */
 }
 
-
 .grid_nav_item a {
     display: inline-block;
     margin-bottom: 20px;
@@ -358,9 +357,10 @@ nav {
 .info_field {
     position: absolute;
     margin: 0;
-    padding: 1em;
-    width: 260px !important;
+    padding-left: 1em;
+    width: 280px !important;
     height: 0; /* Ausgangshöhe */
+    line-height: 1.3;
     background-color: rgba(255, 255, 255, 0.766);
     border: none;
     opacity: 0; /* Unsichtbar starten */
@@ -391,6 +391,7 @@ nav {
 .info_field h3 {
     font-size: 18px;
     font-weight: bold;
+    margin-top: 1em;
     margin-bottom: 0.5em;
 }
 
@@ -407,7 +408,7 @@ nav {
 
 /* Infofeld anzeigen */
 .main_button_container:hover .info_field {
-    height: 280px; /* Zielhöhe */
+    height: 300px; /* Zielhöhe */
     opacity: 1; /* Sichtbar machen */
 }
 
@@ -473,40 +474,39 @@ nav {
 
 .grid_container_team {
     display: grid;
-    grid-template-columns: repeat(2, 2fr); /* 2 Spalten */
-    grid-template-rows: auto auto; /* Höhe passt sich an den Inhalt an */
-    grid-gap: 5em;
-    margin: 0 auto;
+    justify-self: center;
+    grid-template-columns: 250px 465px; /* Spaltenbreite angepasst */
+    grid-template-rows: auto auto; /* Höhe passt sich weiterhin dem Inhalt an */
+    grid-gap: 1em;
     margin-top: 3em;
     margin-bottom: 3em;
     padding: 1.5em;
     padding-top: 5em;
     padding-bottom: 5em;
     height: auto; /* Gesamtcontainer passt sich der Höhe an */
-    width: 80%;
-    max-width: 1200px;
+    width: 765px;
     background-color: #98723935;
-}
+}              
 
-.grid_team_item{
+.grid_team_item {
     position: relative; /* Referenz für absolute Positionierung der Kinder */
     display: flex;
     flex-direction: column; /* Elemente vertikal anordnen */
-    align-items: center; /* Zentrierung horizontal */
+    align-items: center; /* Zentriert horizontal */
     text-align: center;
-    justify-self: center;
-    height: auto; /* Gleiche Höhe wie das Bild */
-    width: 100%; /* Gleiche Breite wie das Bild */
+    justify-content: flex-start; /* Obere Ausrichtung für Inhalt */
+    height: 100%; /* Passt sich dem Inhalt an */
+    width: 100%; /* Füllt die Breite des Elterncontainers */
     max-width: 400px;
-    max-height: 500px;;
-    gap: 0.5em; /* Abstand zwischen Bild und Text */
-    padding: 0; /* Innenabstand */
-    margin: 0; /* Außenabstand */
-    overflow: hidden; /* Verhindert, dass Inhalte außerhalb des Containers sichtbar werden */
+    max-height: 500px; /* Begrenzte Höhe */
+    margin: 0 auto; /* Zentrierung nach außen */
+    overflow: hidden; /* Inhalte außerhalb des Containers werden abgeschnitten */
     z-index: 5;
-    background-color: #67676700;
-    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.218);
+    background-color: transparent; /* Vollständig transparent */
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2); /* Dezenter Schatten */
+    border-radius: 8px; /* Abgerundete Ecken für eine moderne Optik */
 }
+
 
 .grid_team_item h4 {
     margin-left: 0.5em;
@@ -519,15 +519,13 @@ nav {
 }
 
 .grid_container_team h2 {
-    text-align: center;
-    justify-self: center;
     margin-left: 4em;
     margin-bottom: 0.2em;
     border-bottom: 1px solid #a09f9fd2; /* Trennlinie */
     width: 70%; /* Linie über die gesamte Breite */
     font-size: 1.2em; /* Größere Schrift für Überschrift */
-    color: #000000ea; /* Dezente Schriftfarbe */
 }
+
 
 .grid_container_team p {
     margin-top: 1em;
@@ -536,78 +534,106 @@ nav {
 
 
  /* ITEM 1 im Grid für Bild und Text */
-.grid_team_item.item1{
-    grid-column: 1;
-    grid-row: 1;
-    margin-top: 2em;
-}
 
-.grid_team_text1 {
+
+ .info_container1{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+ }
+
+ .grid_team_text1 {
+    position: absolute; /* Elterncontainer muss relativ positioniert sein */
     grid-column: 2;
     grid-row: 1;
     width: 100%;
     height: 100%;
+    padding: 1em;
     justify-self: center;
     text-align: center;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+    z-index: 1;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2); /* Dezenter Schatten */
+    border-radius: 8px; /* Abgerundete Ecken für eine moderne Optik */
 }
 
 .grid_team_text1 p{
-    font-size: 18px;
+    font-size: 15px;
     text-align: left;
     line-height: 1.5;
 }
 
- /* ITEM 2 im Grid für Bild und Text */
-.grid_team_item.item2{
-    grid-column: 2;
-    grid-row: 2;
+.grid_team_item.item1{
+    grid-column: 1;
+    padding: 0;
+    grid-row: 1;
 }
 
-.grid_team_text2 {
-    grid-column: 1;
-    grid-row: 2;
+
+
+.laufbahn_container {
+    position: absolute;
     width: 100%;
     height: 100%;
-    justify-self: center;
-    text-align: center;
+    color: rgb(0, 0, 0);
+    opacity: 0;
+    padding-left: 1em;
+    z-index: 2; /* Sicherstellen, dass es über .grid_team_text1 und Button liegt */
+    transition: opacity 0.5s ease;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2); /* Dezenter Schatten */
+    border-radius: 8px; /* Abgerundete Ecken für eine moderne Optik */
 }
 
-
- /* ITEM 3 im Grid für Bild und Text */
-.grid_team_item.item3{
-    grid-column: 1;
-    grid-row: 3;
+.laufbahn_container h4 {
+    margin-bottom: 1em;
+    border-bottom: 1px solid #a09f9fd2; /* Trennlinie */
+    width: 70%; /* Linie über die gesamte Breite */
+    font-size: 1.2em; /* Größere Schrift für Überschrift */
 }
 
-.grid_team_text3 {
-    grid-column: 2;
-    grid-row: 3;
-    width: 100%;
-    height: 100%;
-    justify-self: center;
-    text-align: center;
+#h4_info_botton{
+    margin-top: 1em;
 }
 
-
- /* ITEM 4 im Grid für Bild und Text */
-.grid_team_item.item4{
-    grid-column: 2;
-    grid-row: 4;
+.laufbahn_container ul {
+    list-style:disc;
+    padding: 1em;
+    font-size: 1em;
 }
 
-.grid_team_text4 {
-    grid-column: 1;
-    grid-row: 4;
-    width: 100%;
-    height: 100%;
-    justify-self: center;
-    text-align: center;
+.laufbahn_container li {
+    padding: 0.2em;
+}
+
+.team_text1_button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #98723938 ;
+    color: rgba(0, 0, 0, 0.896);
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-top: 1em;
+    position: relative;
+    z-index: 3; /* Button bleibt über beiden Containern */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.339);
+}
+
+.team_text1_button:hover{
+    background-color: #98723957 ;
+}
+
+.team_text1_button:active{
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.339);
+
 }
 
 
 .grid_team_item img {
     height: 500px;
-    width: 400px;
+    width: 300px;
     object-fit: cover; /* Kein Verzerren des Bildes */
     margin: 0;     
 }
@@ -620,38 +646,6 @@ nav {
     text-align: center;
 }
 
-.team_info_container {
-    position: absolute; /* Absolut positioniert im Container */
-    display: flex; /* Flexbox für Inhalte */
-    text-align: center;
-    justify-content: center; /* Inhalte zentrieren */
-    padding: 0;
-    margin: 0;
-    top: 0; /* Beginn des Infofelds oben */
-    left: 0; /* Beginn des Infofelds links */
-    width: 100%; /* Vollständige Breite des Containers */
-    height: 0; /* Vollständige Höhe des Containers */
-    background-color: #00000062; /* Hintergrundfarbe mit Transparenz */
-    opacity: 1; /* Unsichtbar bei Standardzustand */
-    overflow: hidden;
-    z-index: 10; /* Höher als das Bild */
-    align-items: center; /* Inhalte horizontal zentrieren */
-    transition: all 0.9s ease; /* Übergang für die Sichtbarkeit */
-}
-
-.team_info_container ul {
-    margin-bottom: -17em;
-}
-
-.team_info_container li {
-    margin-bottom: 1em;
-    list-style-type:none;
-}
-
-.grid_team_item:hover .team_info_container {
-    height: 100%;
-    opacity: 1;
-}
 
 
 
@@ -683,6 +677,8 @@ nav {
     display: grid;
     grid-template-columns: 1fr 765px 1fr;
     height: 500px;
+    margin-bottom: 3em;
+    margin-top: 1em;
 }
 
 .treatment_container{
@@ -693,13 +689,16 @@ nav {
     justify-content: center;
     text-align: left;
     padding: 0;
+    margin: 0;
     height: 100%;
     width: 100%;
 }
 
 .treatment_container p{
     line-height: 2;
-    font-size: 1px;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
 }
 
 #h2_treatment {
@@ -708,14 +707,6 @@ nav {
     margin-bottom: 1em;
     color: rgba(128, 128, 128, 0.711);
 }
-
-
-
-
-
-
-
-
 
 /* ====================================================== */
 /* Konfiguration Kostenseite*/
@@ -744,7 +735,52 @@ nav {
 }
 
 
+.grid_costs{
+    display: grid;
+    grid-template-columns: 1fr 765px 1fr;
+    height: 800px;
+    padding-left: 2em;
+    margin-bottom: 5em;
+    margin-top: 5em;
+}
 
+.costs_container{
+    display: flex;
+    grid-column: 2;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.costs_container p{
+    line-height: 1.5;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+#h4_costs {
+    display: flex;
+    justify-self: start;
+    margin-bottom: 1em;
+    margin-top: 3em;
+    color: rgba(0, 0, 0, 0.892);
+    border-bottom: 1px solid #a09f9fd2; /* Trennlinie */
+    width: 100%; /* Linie über die gesamte Breite */
+}
+
+
+#h2_costs {
+    display: flex;
+    justify-self: start;
+    margin-bottom: 1em;
+    color: rgba(128, 128, 128, 0.711);
+}
 
 
 
@@ -1261,18 +1297,19 @@ nav {
         height: 300px;
     }
     .grid_welcome{
-        height: 500px;    
+        height: 100%;   
+        margin-bottom: 6em;
     }
     .welcome_container {
-        font-size: 13px;
+        font-size: 15px;
         height: 100%;
     }
     .welcome_container h1 {
-        font-size: 20px;
+        font-size: 25px;
         color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
      }
      .welcome_container h2 {
-        font-size: 14px;
+        font-size: 18px;
         color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
      }
      #main_sign {
@@ -1309,19 +1346,6 @@ nav {
         height: 600px;
         font-size: 14px;
     }
-
-    .grid_team_text2 h2{
-        margin: 0;
-        margin-right: 0.5em;
-    }
-    .grid_team_text3 h2{
-        margin: 0;
-        margin-right: 0.5em;
-    }
-    .grid_team_text4 h2{
-        margin: 0;
-        margin-right: 0.5em;
-    }
 }
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 @media (min-width: 375px) and (max-width: 425px)  {
@@ -1332,17 +1356,30 @@ nav {
         display: flex;
         flex-direction: column; /* Elemente untereinander anordnen */
         padding: 1em;
-        gap: 10px; /* Abstand zwischen den Elementen */ 
+        height: 1000px;
+        width: 100% ; 
     } 
+
+    .info_container1{
+        height: 100%;
+        width: 100%;
+        font-size: 1em;
+    }
+
+    .grid_team_text1{
+        height: 100%;
+        width: 100%;   
+    }
 
     .grid_team_item.item1{
         display: flex;
         justify-self: center;
-        margin: 0;   
+        margin: 0 auto; 
+        padding: 0;
+        height: 400px;
+        width: 300px; 
     }
-    .grid_team_text1 {
-        height: 650px;
-    }
+    
     .grid_team_text1 h2{
         margin: 0;
         margin-bottom: 1em;
@@ -1353,69 +1390,8 @@ nav {
         padding: 0;
         height: 300px;
     }
-
-    .grid_team_item.item2{
-        display: flex;
-        justify-self: center;
-    }
-    .grid_team_text2 h2{
-        margin: 0;
-        margin-bottom: 1em;
-        padding: 0;
-    }
-    .grid_team_text2 p{
-        margin: 0;
-        padding: 0;
-        height: 300px;
-    }
-    .grid_team_item.item3{
-        display: flex;
-        justify-self: center;
-    }
-    .grid_team_text3 h2{
-        margin: 0;
-        margin-bottom: 1em;
-        padding: 0;
-    }
-    .grid_team_text3 p{
-        margin: 0;
-        padding: 0;
-        height: 300px;
-    }
-    .grid_team_item.item4{
-        display: flex;
-        justify-self: center;
-    }
-    .grid_team_text4 h2{
-        margin: 0;
-        margin-bottom: 1em;
-        padding: 0;
-    }
-    .grid_team_text4 p{
-        margin: 0;
-        padding: 0;
-        height: 300px;
     }
 
-    .team_info_container {
-        opacity: 0; /* Unsichtbar am Anfang */
-        visibility: hidden; /* Nicht klickbar */
-        transition: opacity 0.5s ease-in-out;
-        animation: showContainer 2s forwards; /* Animation startet automatisch */
-    }
-    
-    /* Animation, um den Container erscheinen zu lassen */
-    @keyframes showContainer {
-        0% {
-            opacity: 0;
-            visibility: hidden;
-        }
-        100% {
-            opacity: 1;
-            visibility: visible;
-        }
-    }
-}
 
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 /*  Media Queries treatment.html */
@@ -1468,18 +1444,46 @@ nav {
 /*  Media Queries costs.html */
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
-@media (max-width: 1156px){
-
-}
-/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 @media (min-width: 768px) and (max-width: 1024px) {
+}
+.grid_costs{
+    height: 700px;
+    margin-top: 1em;
+}
+.costs_container {
+     height: 100%;
+     width: 700px;
+     padding: 1em;
+}
+.costs_container h2 {
+    font-size: 25px;
+}
+.costs_container p {
+    font-size: 14px;
 }
 
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 @media (min-width: 375px) and (max-width: 425px)  {
+    .background_container_costs{
+        height: 200px;
+        margin-top: 2em;
+    }
+    .grid_costs{
+        height: 900px;
+    }
+    .costs_container {
+         height: 100%;
+         width: 350px;
+         padding: 2em;
+    }
+    .costs_container h2 {
+        font-size: 20px;
+    }
+    .costs_container p {
+        font-size: 13px;
+    }
 
 }
-
 
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 /*  Media Queries contact.html */

@@ -148,3 +148,32 @@ document.addEventListener("DOMContentLoaded", function () {
         container.style.visibility = "hidden";
     });
 });
+
+
+
+
+
+
+
+let isLaufbahnVisible = false; // Status, ob der laufbahn_container sichtbar ist
+
+function toggleContainers() {
+    const teamText = document.querySelector('.grid_team_text1');
+    const laufbahn = document.querySelector('.laufbahn_container');
+
+    if (isLaufbahnVisible) {
+        // Laufbahn ausblenden, Team-Text einblenden
+        laufbahn.style.opacity = '0';
+        laufbahn.style.zIndex = '0';
+        teamText.style.opacity = '1';
+        teamText.style.zIndex = '1';
+    } else {
+        // Team-Text ausblenden, Laufbahn einblenden
+        teamText.style.opacity = '0';
+        teamText.style.zIndex = '0';
+        laufbahn.style.opacity = '1';
+        laufbahn.style.zIndex = '2';
+    }
+
+    isLaufbahnVisible = !isLaufbahnVisible; // Status umschalten
+}
