@@ -144,22 +144,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const container = document.querySelector(".team_info_container");
-
-    // Verschwinden bei Touch oder Klick
-    container.addEventListener("touchstart", () => {
-        container.style.opacity = "0";
-        container.style.visibility = "hidden";
-    });
-
-    container.addEventListener("click", () => {
-        container.style.opacity = "0";
-        container.style.visibility = "hidden";
-    });
-});
-
-
 
 let isLaufbahnVisible = false; // Status, ob der laufbahn_container sichtbar ist
 
