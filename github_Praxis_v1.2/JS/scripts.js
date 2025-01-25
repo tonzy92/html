@@ -141,6 +141,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+document.addEventListener("DOMContentLoaded", () => {
+    const button = document.querySelector('.team_text1_button');
+    if (button) {
+        button.addEventListener("click", toggleContainers);
+    } else {
+        console.error("Button mit der Klasse '.team_text1_button' wurde nicht gefunden.");
+    }
+});
+
+
+
 let isLaufbahnVisible = false; // Status, ob der laufbahn_container sichtbar ist
 
 function toggleContainers() {

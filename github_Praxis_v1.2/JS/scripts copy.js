@@ -1,17 +1,46 @@
+let lastScrollY = 0;
+
 window.onscroll = function () {
     var navbar = document.getElementById("navbar");
+    var navbar_grid = document.getElementById("navbar_grid");
     var logo = document.getElementById("logo_shadow");
+    var button = document.getElementById("footer_button");
 
     if (window.scrollY > 100) {
         navbar.classList.add("shrink");
+        navbar_grid.classList.add("shrink_nav");
         logo.classList.add("shrink_logo");
-        console.log("Logo und Navbar geschrumpft."); // Testausgabe
     } else {
         navbar.classList.remove("shrink");
+        navbar_grid.classList.remove("shrink_nav");
         logo.classList.remove("shrink_logo");
-        console.log("Logo und Navbar auf Standardgröße."); // Testausgabe
     }
+
+    if (window.scrollY < lastScrollY && window.scrollY <= 100) {
+        button.classList.add("rotate_button");
+    } else if (window.scrollY > 100) {
+        button.classList.remove("rotate_button");
+    }
+
+    lastScrollY = window.scrollY;
 };
+
+
+
+
+document.querySelector(".arrow-wrap").addEventListener("click", function (event) {
+    event.preventDefault(); // Standard-Link-Verhalten verhindern
+
+    // Prüfen, ob der Benutzer oben oder unten ist
+    if (window.scrollY === 0) {
+        // Benutzer ist oben -> nach unten scrollen
+        document.getElementById("bottom").scrollIntoView({ behavior: "smooth" });
+    } else {
+        // Benutzer ist nicht oben -> nach oben scrollen
+        document.getElementById("top").scrollIntoView({ behavior: "smooth" });
+    }
+});
+
 
 window.onload = function() {
     // Aktueller Pfad der Seite
@@ -32,12 +61,58 @@ window.onload = function() {
 
         // Vergleich: Wenn der aktuelle Pfad den Pfad des Links enthält
         if (currentLocation.endsWith(linkPath)) {
-            link.style.color = "rgb(156, 212, 203)"; // Link einfärben
+            link.style.color ="rgba(152, 114, 57, 0.73)"; // Link einfärben
         } else {
-            link.style.color = "black"; // Andere Links bleiben schwarz
+            link.style.color = "rgba(0, 0, 0, 0.65)"; // Andere Links bleiben schwarz
         }
     });
 }; 
+
+
+
+
+
+
+function toggleNav() {
+    const button = document.getElementById("menuButton");
+    const sidenav = document.getElementById("mySidenav");
+    const menu = document.getElementById("mobile-menu");
+
+    if (sidenav && button) {
+        if (button.textContent === "☰") {
+            sidenav.style.width = "100%";
+            button.textContent = "✖";
+        } else {
+            sidenav.style.width = "0%";
+            button.textContent = "☰";
+        }
+    }
+
+    if (menu) {
+        menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+}
+
+
+/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+  }
+  
+  /* Set the width of the side navigation to 0 */
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0%";
+  }
+
+
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+}
+
+
+document.getElementById('menuButton').addEventListener('click', toggleNav);
+
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".contact-form").addEventListener("submit", function (e) {
@@ -66,24 +141,25 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+let isLaufbahnVisible = false; // Status, ob der laufbahn_container sichtbar ist
 
-document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const mobileMenu = document.querySelector(".dropdown-menu");
+function toggleContainers() {
+    const teamText = document.querySelector('.grid_team_text1');
+    const laufbahn = document.querySelector('.laufbahn_container');
 
-    // Standardmäßig das Menü einklappen, wenn die Seite geladen wird
-    mobileMenu.style.display = "none";
+    if (isLaufbahnVisible) {
+        // Laufbahn ausblenden, Team-Text einblenden
+        laufbahn.style.opacity = '0';
+        laufbahn.style.zIndex = '0';
+        teamText.style.opacity = '1';
+        teamText.style.zIndex = '1';
+    } else {
+        // Team-Text ausblenden, Laufbahn einblenden
+        teamText.style.opacity = '0';
+        teamText.style.zIndex = '0';
+        laufbahn.style.opacity = '1';
+        laufbahn.style.zIndex = '2';
+    }
 
-    menuToggle.addEventListener("click", () => {
-        const isMenuOpen = mobileMenu.style.display === "flex";
-        mobileMenu.style.display = isMenuOpen ? "none" : "flex";
-    });
-
-    // Optional: Schließen des Menüs bei Klick außerhalb
-    document.addEventListener("click", (event) => {
-        if (!menuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
-            mobileMenu.style.display = "none";
-        }
-    });
-});
-
+    isLaufbahnVisible = !isLaufbahnVisible; // Status umschalten
+}
