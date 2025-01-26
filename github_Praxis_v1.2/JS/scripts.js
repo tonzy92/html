@@ -1,3 +1,6 @@
+//###################################################################################//
+// NAVBAR SCHRUMPFEN //
+
 let lastScrollY = 0;
 
 window.onscroll = function () {
@@ -24,9 +27,40 @@ window.onscroll = function () {
 
     lastScrollY = window.scrollY;
 };
+//###################################################################################//
+
+//###################################################################################//
+// SLIDESHOW //
+
+let slideIndex = 0;
+const slides = document.getElementsByClassName("main_background");
+
+function showSlides() {
+  // Alle Bilder ausblenden
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.opacity = "0";
+  }
+
+  // Nächstes Bild anzeigen
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1; // Zurück zum ersten Bild
+  }
+
+  slides[slideIndex - 1].style.opacity = "1"; // Bild einblenden
+
+  // Nächster Wechsel in 3 Sekunden
+  setTimeout(showSlides, 5000);
+}
+
+// Slideshow starten
+showSlides();
+
+//###################################################################################//
 
 
-
+//###################################################################################//
+// SCROLL BUTTON //
 
 document.querySelector(".arrow-wrap").addEventListener("click", function (event) {
     event.preventDefault(); // Standard-Link-Verhalten verhindern
@@ -40,7 +74,11 @@ document.querySelector(".arrow-wrap").addEventListener("click", function (event)
         document.getElementById("top").scrollIntoView({ behavior: "smooth" });
     }
 });
+//###################################################################################//
 
+
+//###################################################################################//
+// EINFÄRBEN DER AKTIVEN ELEMENTE IN DER NAVBAR //
 
 window.onload = function() {
     // Aktueller Pfad der Seite
@@ -67,11 +105,11 @@ window.onload = function() {
         }
     });
 }; 
+//###################################################################################//
 
 
-
-
-
+//###################################################################################//
+// HÄNDELT DIE MOBILE NAVBAR MIT BUTTON  //
 
 function toggleNav() {
     const button = document.getElementById("menuButton");
@@ -92,7 +130,11 @@ function toggleNav() {
         menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
     }
 }
+//###################################################################################//
 
+
+//###################################################################################//
+// HÄNDELT DAS SLIDEMENÜ DER MOBILEN NAVBAR //
 
 /* Set the width of the side navigation to 250px */
 function openNav() {
@@ -109,10 +151,14 @@ function openNav() {
     const menu = document.getElementById('mobile-menu');
     menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
 }
-
-
 document.getElementById('menuButton').addEventListener('click', toggleNav);
+//###################################################################################//
 
+
+
+
+//###################################################################################//
+// FÜR DAS KONTAKTFORMULAR  //
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".contact-form").addEventListener("submit", function (e) {
@@ -139,9 +185,10 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     });
 });
+//###################################################################################//
 
-
-
+//###################################################################################//
+// FÜR DEN BUTTON UND DAS SWITCHEN DES LEBENSLAUFES 
 document.addEventListener("DOMContentLoaded", () => {
     const button = document.querySelector('.team_text1_button');
     if (button) {
@@ -150,8 +197,6 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Button mit der Klasse '.team_text1_button' wurde nicht gefunden.");
     }
 });
-
-
 
 let isLaufbahnVisible = false; // Status, ob der laufbahn_container sichtbar ist
 
@@ -175,3 +220,4 @@ function toggleContainers() {
 
     isLaufbahnVisible = !isLaufbahnVisible; // Status umschalten
 }
+//###################################################################################//
