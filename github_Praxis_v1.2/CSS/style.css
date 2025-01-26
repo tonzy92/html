@@ -1508,9 +1508,9 @@ nav {
     .contact-container {
         display: flex;
         flex-direction: column;
-        margin: 1em auto;
-        padding: 0;
-        width: 300px; /* Breite des Containers */
+        margin: 0 auto;
+        padding: 2em;
+        width: 100%; /* Breite des Containers */
     }
 
     .contact-info {
