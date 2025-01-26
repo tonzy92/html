@@ -771,20 +771,6 @@ nav {
 }
 
 
-#h2_costs {
-    display: flex;
-    justify-self: start;
-    margin-bottom: 1em;
-    color: rgba(128, 128, 128, 0.711);
-}
-
-
-
-
-
-
-
-
 /* ====================================================== */
 /* Konfiguration Kontaktformular*/
 /* ====================================================== */
@@ -1141,23 +1127,16 @@ nav {
 
 /* Container für den Inhalt */
 
-.impressum_background {
-    margin: 0;
-    padding: 0;
-    height: 500px;
-    width: 100%;
-    background-repeat: no-repeat; /* Verhindert Wiederholung des Bildes */
-    background-size: cover; /* Skaliert das Bild proportional, um den gesamten Bereich zu füllen */
-    background-position: center; /* Zentriert das Bild im Container */
-}
+
 .content-container {
-    max-width: 800px;
-    margin: 2em auto;
-    margin-top: 7em;
-    padding: 1em 2em;
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr minmax(0, 765px) 1fr;
+    height: 100%;
+    margin: 0 auto;
+    padding: 1em;
+    padding-top: 9em;
     background: #ffffff8b;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.551);
 }
 
 /* Überschriften */
@@ -1166,6 +1145,7 @@ nav {
     margin: 0;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    
 }
     
 .section-title {
@@ -1191,6 +1171,9 @@ nav {
 
 .content-section {
     margin-bottom: 2em;
+    grid-column: 2;
+    padding: 1em;
+    box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.551);
 }
 
 /* Hervorhebung (Box für rechtliche Hinweise oder Downloads) */
@@ -1292,6 +1275,7 @@ nav {
 }
 .welcome_container{
     font-size: 18x;
+    padding: 1.5em;
 }
 .welcome_container h1 {
     font-size: 25px;
@@ -1318,6 +1302,7 @@ nav {
     .welcome_container {
         font-size: 15px;
         height: 100%;
+        padding: 1.5em;
     }
     .welcome_container h1 {
         font-size: 25px;
@@ -1435,7 +1420,6 @@ nav {
 @media (min-width: 375px) and (max-width: 425px)  {
     .background_container_treatment{
         height: 200px;
-        margin-top: 2em;
     }
     .grid_treatment{
         height: 700px;
@@ -1610,7 +1594,6 @@ nav {
 @media (min-width: 375px) and (max-width: 425px)  {
     .background_container_route{
         height: 200px;
-        margin-top: 2em;
     }
     .grid_route{
         display: flex;

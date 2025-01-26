@@ -65,7 +65,6 @@ nav {
     z-index: 10;
     box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2); /* Schatten */
  }
-
 /* ====================================================== */
 /* Grid für Navigation */
 /* ====================================================== */
@@ -98,6 +97,7 @@ nav {
     justify-self: center;
     font-size: 1.1rem;
     text-decoration: none;
+
 }
 
 .grid_nav_item a::after {
@@ -250,13 +250,12 @@ nav {
 /* The side navigation menu */
 .sidenav {
     position: fixed; /* Bleibt an der gleichen Stelle, unabhängig vom Scrollen */
-    display: none;
     padding: 0;
     padding-top: 100px;
     height: auto; /* Volle Höhe des Viewports */
     max-height: 100%;
     width: 0; /* Startet mit 0 Breite */
-    background-color: #ffffffdb;; /* Hintergrundfarbe */
+    background-color: #ffffffe7;; /* Hintergrundfarbe */
     overflow-x: hidden; /* Kein horizontaler Scroll */
     transition: width 0.5s ease, opacity 0.5s ease; /* Übergangseffekte */
     z-index: 500;
@@ -270,9 +269,9 @@ nav {
     text-decoration: none;
     font-size: 15px;
     line-height: 2; /* oder z. B. 24px */
-    color: #000000a1;
+    color: #000000d1;
     transition: 0.3s;
-    border-bottom: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgba(33, 33, 33, 0.129);
 }
 
 .sidenav a:hover {
@@ -288,7 +287,7 @@ nav {
     margin-top: 1em;
     margin-left: 1em;
     left: 0;
-    filter:drop-shadow(5px 5px 5px  rgba(0,0,0,0.3));
+    filter:drop-shadow1(5px 5px 5px  rgba(0,0,0,0.3));
     width: 100px;
     height: 80px;    
 }
@@ -308,24 +307,30 @@ nav {
 /* Konfiguration der Index Seite */
 /* ====================================================== */
 
-/* .background_container {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
- */
 
-.main_background {
-    position:relative;
-    margin: 0;
-    padding-top: 5em;
-    height: 100%;
+.background_container {
+    position: relative;
     width: 100%;
-    z-index: 2;
-    background-repeat: no-repeat; /* Verhindert Wiederholung des Bildes */
-}
+    height: 600px;
+    overflow: hidden;
+  }
+  
+  .slideshow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .main_background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out; /* Weicher Übergang */
+  }
+  
+  
 
 
 .main_button_container {
@@ -433,6 +438,7 @@ nav {
     justify-content: center;
     text-align: left;
     padding: 0;
+    padding-left: 1em;
     height: 100%;
     width: 100%;
 }
@@ -450,11 +456,7 @@ nav {
     margin-top: 1em;
     text-align: justify; /* Text wird blockweise ausgerichtet */
 }
-#main_sign {
-    margin-top: 2em;
-    font-weight: bold; /* Fettgedruckt für Unterschrift */
-    color: rgba(95, 95, 95, 0.46); /* Dezente Farbe für Unterschrift */
-}
+
 
 /* ====================================================== */
 /* Grid für die Team-Seite */
@@ -560,9 +562,10 @@ nav {
 }
 
 .grid_team_text1 p{
-    font-size: 15px;
+    font-size: 14px;
     text-align: left;
     line-height: 1.5;
+    padding: 1em;
 }
 
 .grid_team_item.item1{
@@ -594,17 +597,18 @@ nav {
 }
 
 #h4_info_botton{
-    margin-top: 1em;
+    margin-top: 3em;
 }
 
 .laufbahn_container ul {
     list-style:disc;
     padding: 1em;
-    font-size: 1em;
+    padding-left: 2em;
+    font-size: 0.9em;
 }
 
 .laufbahn_container li {
-    padding: 0.2em;
+    padding: 0.3em;
 }
 
 .team_text1_button {
@@ -629,8 +633,6 @@ nav {
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.339);
 
 }
-
-
 .grid_team_item img {
     height: 500px;
     width: 300px;
@@ -647,11 +649,6 @@ nav {
 }
 
 
-
-
-
-
-
 /* ====================================================== */
 /* Konfiguration der Behandlungsseite */
 /* ====================================================== */
@@ -659,7 +656,6 @@ nav {
 .background_container_treatment {
     position:relative;
     margin: 0;
-    padding-top: 3.8em;
     height: 100%;
     width: 100%;
     z-index: 2;
@@ -773,20 +769,6 @@ nav {
     border-bottom: 1px solid #a09f9fd2; /* Trennlinie */
     width: 100%; /* Linie über die gesamte Breite */
 }
-
-
-#h2_costs {
-    display: flex;
-    justify-self: start;
-    margin-bottom: 1em;
-    color: rgba(128, 128, 128, 0.711);
-}
-
-
-
-
-
-
 
 
 /* ====================================================== */
@@ -1133,7 +1115,7 @@ nav {
 
 /* Zustand mit neuer Position */
 .footer_button.rotate_button {
-    bottom: 90vh; /* Verschiebt den Button um 500px */
+    bottom: 92%; /* Verschiebt den Button um 500px */
     transition: bottom 0.5s ease-in-out; /* Animation für die neue Position */
     transform: rotate(180deg);
 }
@@ -1155,10 +1137,10 @@ nav {
     background-position: center; /* Zentriert das Bild im Container */
 }
 .content-container {
+    position: relative;
+    height: 100%;
     max-width: 800px;
-    margin: 2em auto;
-    margin-top: 7em;
-    padding: 1em 2em;
+    margin: 0 auto;
     background: #ffffff8b;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.551);
@@ -1232,6 +1214,14 @@ nav {
         display: flex;
     }
 }
+
+@media (min-width: 375px) and (max-width: 1024px)  {
+    .main_button_info{
+        display: none
+    }
+}
+
+
   @media (min-width: 375px) and (max-width: 425px) {
     /* Regeln für Smartphones hier */
     #logo_shadow_side {
@@ -1248,9 +1238,17 @@ nav {
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
 /* Für Desktops und Laptops (Breite: 992px bis 1199px) */
-@media (max-width: 1156px){
+@media (min-width: 1023px) and (max-width: 1440px){
     /* Regeln für mittelgroße Bildschirme hier */
-
+    .main_button_inf{
+        display: none
+    }
+    .background_container {
+        height: 600px;
+    }
+    .main_background{
+        height: 600px;
+    }
     .main_button_container {
         display: none;
     } 
@@ -1268,16 +1266,19 @@ nav {
         font-size: 18px;
         color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
      }
-     #main_sign {
-        font-size: 15px;
-        color: rgba(95, 95, 95, 0.46); /* Dezente Farbe für Unterschrift */
-    }
 }
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 @media (min-width: 768px) and (max-width: 1024px) {
+
+.main_background{
+    height: 350px;
+}
+.background_container {
+    height: 400px;
 }
 .welcome_container{
     font-size: 18x;
+    padding: 1.5em;
 }
 .welcome_container h1 {
     font-size: 25px;
@@ -1287,22 +1288,24 @@ nav {
     font-size: 18px;
     color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
  }
- #main_sign {
-    font-size: 15px;
-    color: rgba(95, 95, 95, 0.46); /* Dezente Farbe für Unterschrift */
 }
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 @media (min-width: 375px) and (max-width: 425px)  {
     .main_background{
-        height: 300px;
+        height: 250px;
+    }
+
+    .background_container {
+        height: 400px;
     }
     .grid_welcome{
-        height: 100%;   
+        height: 400px;   
         margin-bottom: 6em;
     }
     .welcome_container {
         font-size: 15px;
         height: 100%;
+        padding: 1.5em;
     }
     .welcome_container h1 {
         font-size: 25px;
@@ -1312,12 +1315,8 @@ nav {
         font-size: 18px;
         color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
      }
-     #main_sign {
-        font-size: 11px;
-        color: rgba(95, 95, 95, 0.46); /* Dezente Farbe für Unterschrift */
-    }
-}
 
+}
 
 
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
@@ -1352,6 +1351,10 @@ nav {
     .main_background_team {
         height: 200px;
     } 
+
+    .background_container{
+        height: 200px;
+    }
     .grid_container_team{
         display: flex;
         flex-direction: column; /* Elemente untereinander anordnen */
@@ -1364,7 +1367,7 @@ nav {
         height: 100%;
         width: 100%;
         font-size: 1em;
-    }
+    }     
 
     .grid_team_text1{
         height: 100%;
@@ -1420,7 +1423,6 @@ nav {
 @media (min-width: 375px) and (max-width: 425px)  {
     .background_container_treatment{
         height: 200px;
-        margin-top: 2em;
     }
     .grid_treatment{
         height: 700px;
@@ -1595,18 +1597,20 @@ nav {
 @media (min-width: 375px) and (max-width: 425px)  {
     .background_container_route{
         height: 200px;
-        margin-top: 2em;
     }
     .grid_route{
         display: flex;
         flex-direction: column;
-        justify-self: center;
-        width: 300px;
+        justify-self: left;
+        width: 350px;
         margin: 0;
-        padding: 0;
+        padding-left: 2em;
     }
     .route_container{
         font-size: 13px;
+    }
+    .contact-info{
+        text-align: left;
     }
 }
 
