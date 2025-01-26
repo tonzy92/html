@@ -307,24 +307,63 @@ nav {
 /* Konfiguration der Index Seite */
 /* ====================================================== */
 
-/* .background_container {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
- */
 
-.main_background {
-    position:relative;
-    margin: 0;
-    padding-top: 5em;
-    height: 100%;
+.background_container {
+    position: relative;
     width: 100%;
-    z-index: 2;
-    background-repeat: no-repeat; /* Verhindert Wiederholung des Bildes */
-}
+    height: 600px;
+    overflow: hidden;
+  }
+  
+  .slideshow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .main_background {
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    object-fit: cover; /* Bild passt sich proportional an */
+    opacity: 0;
+    animation: slideshow 15s infinite; /* Gesamtdauer 15 Sekunden (3 Bilder à 5 Sekunden) */
+  }
+  
+  .main_background:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .main_background:nth-child(2) {
+    animation-delay: 5s;
+  }
+  
+  .main_background:nth-child(3) {
+    animation-delay: 5s;
+  }
+  
+  @keyframes slideshow {
+    0%, 33.33% { 
+      opacity: 1; /* Bild bleibt sichtbar */
+    }
+    30%, 33.33% {
+      opacity: 1; /* Sicherstellen, dass das Bild sichtbar bleibt */
+    }
+    33.34%, 36% {
+      opacity: 0; /* Schneller Übergang */
+    }
+    36.01%, 66.66% {
+      opacity: 1; /* Nächstes Bild sichtbar */
+    }
+    63.66%, 66.66% {
+      opacity: 1;
+    }
+    66.67%, 100% {
+      opacity: 0; /* Übergang am Ende */
+    }
+  }
+  
+  
 
 
 .main_button_container {
@@ -654,7 +693,6 @@ nav {
 .background_container_treatment {
     position:relative;
     margin: 0;
-    padding-top: 3.8em;
     height: 100%;
     width: 100%;
     z-index: 2;
@@ -1227,6 +1265,14 @@ nav {
         display: flex;
     }
 }
+
+@media (min-width: 375px) and (max-width: 1024px)  {
+    .main_button_info{
+        display: none
+    }
+}
+
+
   @media (min-width: 375px) and (max-width: 425px) {
     /* Regeln für Smartphones hier */
     #logo_shadow_side {
@@ -1243,9 +1289,17 @@ nav {
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
 /* Für Desktops und Laptops (Breite: 992px bis 1199px) */
-@media (max-width: 1156px){
+@media (min-width: 1023px) and (max-width: 1440px){
     /* Regeln für mittelgroße Bildschirme hier */
-
+    .main_button_inf{
+        display: none
+    }
+    .background_container {
+        height: 600px;
+    }
+    .main_background{
+        height: 600px;
+    }
     .main_button_container {
         display: none;
     } 
@@ -1270,6 +1324,12 @@ nav {
 }
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 @media (min-width: 768px) and (max-width: 1024px) {
+
+.main_background{
+    height: 350px;
+}
+.background_container {
+    height: 400px;
 }
 .welcome_container{
     font-size: 18x;
@@ -1286,13 +1346,18 @@ nav {
     font-size: 15px;
     color: rgba(95, 95, 95, 0.46); /* Dezente Farbe für Unterschrift */
 }
+}
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 @media (min-width: 375px) and (max-width: 425px)  {
     .main_background{
-        height: 300px;
+        height: 250px;
+    }
+
+    .background_container {
+        height: 400px;
     }
     .grid_welcome{
-        height: 100%;   
+        height: 400px;   
         margin-bottom: 6em;
     }
     .welcome_container {
@@ -1312,7 +1377,6 @@ nav {
         color: rgba(95, 95, 95, 0.46); /* Dezente Farbe für Unterschrift */
     }
 }
-
 
 
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
@@ -1347,6 +1411,10 @@ nav {
     .main_background_team {
         height: 200px;
     } 
+
+    .background_container{
+        height: 200px;
+    }
     .grid_container_team{
         display: flex;
         flex-direction: column; /* Elemente untereinander anordnen */
@@ -1359,7 +1427,7 @@ nav {
         height: 100%;
         width: 100%;
         font-size: 1em;
-    }
+    }     
 
     .grid_team_text1{
         height: 100%;
@@ -1602,6 +1670,9 @@ nav {
     }
     .route_container{
         font-size: 13px;
+    }
+    .contact-info{
+        text-align: left;
     }
 }
 
