@@ -1630,10 +1630,10 @@ nav {
     .grid_route{
         display: flex;
         flex-direction: column;
-        justify-self: center;
+        justify-self: left;
         width: 350px;
         margin: 0;
-        padding: 1em;
+        padding-left: 2em;
     }
     .route_container{
         font-size: 13px;
