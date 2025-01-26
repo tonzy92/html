@@ -456,11 +456,7 @@ nav {
     margin-top: 1em;
     text-align: justify; /* Text wird blockweise ausgerichtet */
 }
-#main_sign {
-    margin-top: 2em;
-    font-weight: bold; /* Fettgedruckt für Unterschrift */
-    color: rgba(95, 95, 95, 0.46); /* Dezente Farbe für Unterschrift */
-}
+
 
 /* ====================================================== */
 /* Grid für die Team-Seite */
@@ -1284,10 +1280,6 @@ nav {
         font-size: 18px;
         color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
      }
-     #main_sign {
-        font-size: 15px;
-        color: rgba(95, 95, 95, 0.46); /* Dezente Farbe für Unterschrift */
-    }
 }
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -1309,10 +1301,6 @@ nav {
     font-size: 18px;
     color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
  }
- #main_sign {
-    font-size: 15px;
-    color: rgba(95, 95, 95, 0.46); /* Dezente Farbe für Unterschrift */
-}
 }
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 @media (min-width: 375px) and (max-width: 425px)  {
@@ -1339,10 +1327,7 @@ nav {
         font-size: 18px;
         color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
      }
-     #main_sign {
-        font-size: 11px;
-        color: rgba(95, 95, 95, 0.46); /* Dezente Farbe für Unterschrift */
-    }
+
 }
 
 
