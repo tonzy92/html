@@ -1234,7 +1234,7 @@ nav {
 /*  Media Queries index.html */
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
-/* Für Desktops und Laptops (Breite: 992px bis 1199px) */
+
 @media (min-width: 1023px) and (max-width: 1440px){
     /* Regeln für mittelgroße Bildschirme hier */
     .main_button_inf{
@@ -1252,15 +1252,15 @@ nav {
     .grid_welcome{
         padding: 2em;
     }
-    .welcome_container{
-        font-size: 15x;
+    .welcome_container p{
+        font-size: 18x;
     }
     .welcome_container h1 {
-        font-size: 25px;
-        color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
+        font-size: 30px;
+        color: rgba(0, 0, 0, 0.884); /* Dezente Textfarbe */
      }
      .welcome_container h2 {
-        font-size: 18px;
+        font-size: 24px;
         color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
      }
 }
@@ -1276,10 +1276,11 @@ nav {
 .welcome_container{
     font-size: 18x;
     padding: 1.5em;
+
 }
 .welcome_container h1 {
     font-size: 25px;
-    color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
+    color: rgb(0, 0, 0); /* Dezente Textfarbe */
  }
  .welcome_container h2 {
     font-size: 18px;
@@ -1305,9 +1306,9 @@ nav {
         padding: 1.5em;
     }
     .welcome_container h1 {
-        font-size: 25px;
-        color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
-     }
+        font-size: 21px;
+        color: rgb(0, 0, 0); /* Dezente Textfarbe */
+    }
      .welcome_container h2 {
         font-size: 18px;
         color: rgba(95, 95, 95, 0.6); /* Dezente Textfarbe */
