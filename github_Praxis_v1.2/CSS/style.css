@@ -65,7 +65,6 @@ nav {
     z-index: 10;
     box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2); /* Schatten */
  }
-
 /* ====================================================== */
 /* Grid für Navigation */
 /* ====================================================== */
@@ -98,6 +97,7 @@ nav {
     justify-self: center;
     font-size: 1.1rem;
     text-decoration: none;
+    color: #000;
 }
 
 .grid_nav_item a::after {

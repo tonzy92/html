@@ -32,30 +32,38 @@ window.onscroll = function () {
 //###################################################################################//
 // SLIDESHOW //
 
-let slideIndex = 0;
-const slides = document.getElementsByClassName("main_background");
-
-function showSlides() {
-  // Alle Bilder ausblenden
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.opacity = "0";
+// Prüfen, ob die aktuelle Seite index.html ist
+if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("main_background");
+  
+    if (slides.length > 0) {
+      function showSlides() {
+        // Alle Bilder ausblenden
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.opacity = "0";
+        }
+  
+        // Nächstes Bild anzeigen
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1; // Zurück zum ersten Bild
+        }
+  
+        // Bild einblenden
+        slides[slideIndex - 1].style.opacity = "1";
+  
+        // Nächster Wechsel in 5 Sekunden
+        setTimeout(showSlides, 5000);
+      }
+  
+      // Slideshow starten
+      showSlides();
+    } else {
+      console.warn("Keine Elemente mit der Klasse 'main_background' gefunden.");
+    }
   }
-
-  // Nächstes Bild anzeigen
-  slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1; // Zurück zum ersten Bild
-  }
-
-  slides[slideIndex - 1].style.opacity = "1"; // Bild einblenden
-
-  // Nächster Wechsel in 3 Sekunden
-  setTimeout(showSlides, 5000);
-}
-
-// Slideshow starten
-showSlides();
-
+  
 //###################################################################################//
 
 
@@ -86,25 +94,28 @@ window.onload = function() {
 
     // Sonderfall für die Startseite
     if (currentLocation === "/" || currentLocation === "/index.html") {
-        currentLocation = "/Marcella/HTML/index.html"; // Falls index.html aufgerufen wird, passe es an
+        currentLocation = "/HTML/index.html"; // Einheitlicher Pfad für index.html
     }
 
-    // Alle Links innerhalb der NaviSgation
+    // Alle Links innerhalb der Navigation
     const navLinks = document.querySelectorAll('.grid_nav_item a, .dropdown-content a');
 
-    // Für jeden Link in der Navigation prüfen, ob der Pfad übereinstimmt
+    // Für jeden Link prüfen, ob der Pfad übereinstimmt
     navLinks.forEach(link => {
-        // Hole den Pfad des Links ohne Berücksichtigung des Protokolls und des Hostnamens
+        // Hole den Pfad des Links (ohne Berücksichtigung von Query-Strings oder Hashes)
         const linkPath = new URL(link.href).pathname;
 
-        // Vergleich: Wenn der aktuelle Pfad den Pfad des Links enthält
-        if (currentLocation.endsWith(linkPath)) {
-            link.style.color ="rgba(152, 114, 57, 0.73)"; // Link einfärben
+        // Vergleich: Prüfen, ob der aktuelle Pfad exakt mit dem Link-Pfad übereinstimmt
+        if (currentLocation === linkPath) {
+            // Markiere den aktuellen Link
+            link.style.color = "rgba(152, 114, 57, 0.73)";
         } else {
-            link.style.color = "rgba(0, 0, 0, 0.65)"; // Andere Links bleiben schwarz
+            // Standardfarbe für nicht aktive Links
+            link.style.color = "rgba(0, 0, 0, 0.65)";
         }
     });
-}; 
+};
+
 //###################################################################################//
 
 
