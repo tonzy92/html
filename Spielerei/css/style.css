@@ -1,0 +1,66 @@
+.cube_container {
+    position: absolute;
+    flex-direction: row;
+    justify-self: center;
+    justify-items: center;
+    margin-top: 1rem;
+    width: 700px;
+    height: 700px;
+    border: solid 1px #000;
+    background-color: rgba(255, 255, 255, 0.346);
+}
+
+.cube {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+}
+
+
+
+#cube1 {
+    position: absolute;
+    top: 0;
+    left: 100px;
+    background: transparent;
+    
+}
+
+#cube2 {
+    position: absolute;
+    left: 50px;
+    top: 0;
+    background: transparent;
+}
+
+
+
+
+#button_cube {
+    position: absolute;
+    height: 50px;
+    width: 200px;
+    top: 750px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5%;
+    background-color: rgba(239, 239, 239, 0.47);
+    box-shadow: #000 4px 5px 10px;
+    transition: all 0.3s ease;
+}   
+
+#button_cube:active {
+    box-shadow: #0000009d 2px 2px 4px;
+    transition: all 0.3 ease;
+}
+
+#button_cube:hover {
+    background-color: rgba(228, 228, 228, 0.852);
+    font-size: 1rem;
+}
+
+
+
+
+
